@@ -15,10 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Klass header
+ * header.php
+ *
  * @package    theme_klass
  * @copyright  2015 onwards LMSACE Dev Team (http://www.lmsace.com)
- * @author     LMSACE Dev Team
+ * @author    LMSACE Dev Team
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

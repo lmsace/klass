@@ -26,7 +26,7 @@ $string['about'] = 'حول';
 $string['aboutus'] = 'معلومات عنا';
 $string['address'] = 'عنوان';
 $string['calendar'] = 'تقويم';
-$string['choosereadme'] = '<div class="clearfix"><div class="theme_screenshot"><img class=img-polaroid src="klass/pix/screenshot.jpg" /><h3>قروض موضوع</h3><p><h3>Moodle Klass موضوع</h3><p>ويستند هذا الموضوع على موضوع Boost موودل.</p><p>المؤلف: LMSACE فريق ديف<br>اتصال: info@lmsace.com<br>موقع الكتروني: <a href="http://www.lmsace.com">www.lmsace.com</a><br></p>';
+$string['choosereadme'] = '<div class="clearfix"><div class="theme_screenshot"><img class=img-polaroid src="klass/pix/screenshot.jpg" /><h3>قروض موضوع</h3><p><h3>Moodle Klass موضوع</h3><p>ويستند هذا الموضوع على موضوع Boost موودل.</p><p>المؤلف: LMSACE فريق ديف<br>الاتصال: info@lmsace.com<br>موقع الكتروني: <a href="http://www.lmsace.com">www.lmsace.com</a><br></p>';
 $string['configtitle'] = 'Klass';
 $string['connectus'] = 'اتصل بنا';
 $string['contact'] = 'اتصال';

@@ -39,7 +39,7 @@
         <span class="hidden-md-down">
         {{{ output.search_box }}}
         </span>
-        
+
 
        <nav class="nav navbar-nav hidden-xl-down">
 		            <a href="#" class="brand" style="display: none;">Title</a>
@@ -50,16 +50,16 @@
             <div class="nav-collapse collapse navbar-responsive-collapse">
               <p class="navbar-text"><a href="{{{ config.wwwroot }}}"><i class="fa fa-home"></i> {{ phoneno }}</a></p>
 			</div>
-	   
-            
+
+
         </nav>
     </div>
 </header>
 
 <div class="header-main">
-          <div class="header-main-content">
-            <div class="container">
-                <div id="logo">
+    <div class="header-main-content">
+        <div class="container">
+            <div id="logo">
                 <a href="{{{ config.wwwroot }}}/?redirect=0" class="navbar-brand {{# logourl }}has-logo{{/ logourl }}
             {{^ logourl }}
                 hidden-sm-down
@@ -74,49 +74,47 @@
                 <span class="site-name hidden-sm-down">{{{ sitename }}}</span>
             {{/ logourl }}
                 </a>
-				</div>
-               
-			   {{# compare}}
-               
-                <div class="navbar">
-                            <div class="navbar-inner">
-                                           
-                              <button class="{{{customclass}}}" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+    	    </div>
+
+	   {{# compare}}
+
+            <div class="navbar">
+                <div class="navbar-inner">
+
+                    <button class="{{{customclass}}}" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
 
                     <div class="collapse navbar-toggleable-md" id="navbarResponsive">
-                                
-                                <!-- custom_menu -->
-                {{{ output.custom_menu }}}
-                <!-- page_heading_menu -->
-                {{{ output.page_heading_menu }}}
-                                </div>
-                              </div>
-                                </div>
-                
-
-			    <div class="top-search hidden-xl-down">
-                <form action="{{surl}}" method="get">
-                    <input type="text" placeholder="{{searchcourses}}" name="search" value="Search courses">
-                    <input type="submit" value="Search">
-                </form>
+                        <!-- custom_menu -->
+                        {{{ output.custom_menu }}}
+                        <!-- page_heading_menu -->
+                        {{{ output.page_heading_menu }}}
+                    </div>
                 </div>
-              </div>
-               {{/ compare}}
-        </div>
-		
-        <div class="header-main-menubar hidden-xl-down">
-			<div class="container">
-                          <div class="navbar">
-                            <div class="navbar-inner">
-                              
-                			  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+            </div>
 
-                	<div class="collapse navbar-toggleable-md" id="navbarResponsive">
-                                
-                                {{{ output.primarymenu}}}
-                                </div>
-                              </div>
-                                </div>
-          </div>
+
+    	    <div class="top-search hidden-xl-down">
+            <form action="{{surl}}" method="get">
+                <input type="text" placeholder="{{searchcourses}}" name="search" value="Search courses">
+                <input type="submit" value="Search">
+            </form>
+            </div>
         </div>
-      </div>
+        {{/ compare}}
+    </div>
+
+    <div class="header-main-menubar hidden-xl-down">
+    	<div class="container">
+            <div class="navbar">
+               <div class="navbar-inner">
+
+            		<button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+
+            	   <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+                        {{{ output.primarymenu}}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

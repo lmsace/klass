@@ -15,21 +15,20 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Klass course_renderer
+ * renderers/course_renderer.php
+ *
  * @package    theme_klass
- * @copyright  2015 onwards LMSACE Dev Team http://www.lmsace.com
- * @author     LMSACE Dev Team , lmsace.com
+ * @copyright  2015 onwards LMSACE Dev Team (http://www.lmsace.com)
+ * @author    LMSACE Dev Team , lmsace.com
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot . "/course/renderer.php");
 
 /**
- * Theme Klass course renderer class inherit from core course renderer class.
- * @package    theme_klass
- * @copyright  2015 onwards LMSACE Dev Team http://www.lmsace.com
- * @author     LMSACE Dev Team , lmsace.com
+ * Klass theme course renderer class
+ *
+ * @copyright  2015 onwards LMSACE Dev Team (http://www.lmsace.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class theme_klass_core_course_renderer extends core_course_renderer {
@@ -211,10 +210,11 @@ class theme_klass_core_course_renderer extends core_course_renderer {
 
     /**
      * Renderer the course cat course box from the parent
-     * @param coursecat_helper $chelper pass in $CHELPER.
-     * @param type|string $course
-     * @param type|string $additionalclasses
-     * @return type|string
+     *
+     * @param coursecat_helper $chelper
+     * @param int $course
+     * @param string $additionalclasses
+     * @return $content
      */
     protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
         global $CFG;

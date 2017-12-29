@@ -1,8 +1,10 @@
+{{#footerall}}
 <footer id="footer" class="p-y-1 bg-inverse">
    <div class="footer-main">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+            {{#block1}}
+                <div class="{{colclass}}">
                     <div class="infoarea">
                         <div class="footer-logo">
                             <a href="{{config.wwwroot}}/?redirect=0">
@@ -14,8 +16,9 @@
                         {{{footnote}}}
                      </div>
                 </div>
+                {{/block1}}
 				{{# infolink}}
-                <div class="col-md-2">
+                <div class="{{colclass}}">
                     <div class="foot-links">
                         <h5>{{s_info}}</h5>
 						<ul>
@@ -25,7 +28,7 @@
                 </div>
 				{{/ infolink}}
 				 {{# contact}}
-                <div class="col-md-3">
+                <div class="{{colclass}}">
                     <div class="contact-info">
                         <h5 class="nopadding">{{s_contact_us}}</h5>
                         <p>{{# address}}{{address}}{{/address}}</p>
@@ -39,7 +42,7 @@
                 </div>
 				{{/ contact}}
 			{{# url }}
-                <div class="col-md-3">
+                <div class="{{colclass}}">
                     <div class="social-media">
                     <h5>{{s_get_social}}</h5>
                     <ul>
@@ -89,12 +92,13 @@
         </div>
     </div>
 </footer>
+{{/footerall}}
+
 <!--E.O.Footer-->
 
-<footer>
-{{{output.standard_footer_html}}}
-</footer>
+{{{ output.standard_footer_html }}}
 {{{output.standard_end_of_body_html}}}
+
 {{#js}}
 require(['theme_boost/loader']);
 require(['theme_boost/drawer'], function(mod) {
