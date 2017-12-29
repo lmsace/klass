@@ -15,7 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Klass slideshow
+ * slideshow.php
+ *
  * @package     theme_klass
  * @copyright   2015 LMSACE Dev Team,lmsace.com
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -27,7 +28,7 @@ $numberofslides = theme_klass_get_setting('numberofslides');
 if ($numberofslides) { ?>
 
 <div class="theme-slider">
-  <div id="home-page-carousel" class="carousel slide" data-ride="carousel">
+  <div id="home-page-carousel" class="carousel slide" data-ride="carousel" data-interval= "2000">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <?php for($s = 0; $s < $numberofslides; $s++):

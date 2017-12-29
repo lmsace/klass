@@ -15,7 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Klass frontpage
+ * frontpage.php
+ *
  * @package   theme_klass
  * @copyright 2015 Lmsace Dev Team,lmsace.com
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -31,8 +32,6 @@ if (right_to_left()) {
     $regionbsid = 'region-bs-main-and-pre';
 }
 
-$PAGE->requires->js('/theme/klass/javascript/bootstrap-carousel.js');
-$PAGE->requires->js('/theme/klass/javascript/bootstrap-transition.js');
 $courserenderer = $PAGE->get_renderer('core', 'course');
 
 echo $OUTPUT->doctype() ?>

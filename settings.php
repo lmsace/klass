@@ -15,7 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Klass settings
+ * settings.php
+ *
  * @package   theme_klass
  * @copyright 2015 LMSACE Dev Team, lmsace.com
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

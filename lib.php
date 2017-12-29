@@ -15,14 +15,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Klass lib
+ * lib.php
+ *
  * @package   theme_klass
  * @copyright 2015 LMSACE Dev Team, lmsace.com
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
-
 /**
  * Get the pre scss for the theme
  * @param string $theme
@@ -43,6 +43,7 @@ function theme_klass_get_pre_scss($theme) {
 
 /**
  * Add the custom scss into the theme scss.
+ *
  * @param string $theme
  * @return string
  */
@@ -52,7 +53,8 @@ function theme_klass_get_extra_scss($theme) {
 
 /**
  * Get the main scss content for the theme.
- * @param array $theme
+ *
+ * @param string $theme
  * @return string
  */
 function theme_klass_get_main_scss_content($theme) {
@@ -67,9 +69,10 @@ function theme_klass_get_main_scss_content($theme) {
 }
 
 /**
- * Load the Jquery and migration files.
- * Load the our theme js file.
- * @param moodle_page $page Pass in $PAGE.
+ * Load the Jquery and migration files
+ * Load the our theme js file
+ *
+ * @param  moodle_page $page [description]
  */
 function theme_klass_page_init(moodle_page $page) {
     $page->requires->jquery();
@@ -79,8 +82,9 @@ function theme_klass_page_init(moodle_page $page) {
 /**
  * Loads the CSS Styles and replace the background images.
  * If background image not available in the settings take the default images.
- * @param type|string $css
- * @param type|string $theme
+ *
+ * @param string $css
+ * @param string $theme
  * @return string
  */
 function theme_klass_process_css($css, $theme) {
@@ -101,8 +105,8 @@ function theme_klass_process_css($css, $theme) {
 /**
  * Adds the logo to CSS.
  *
- * @param type|string $scss The CSS.
- * @param type|string $logo The URL of the logo.
+ * @param string $scss The CSS.
+ * @param string $logo The URL of the logo.
  * @return string The parsed CSS
  */
 function theme_klass_set_logo($scss, $logo) {
@@ -177,10 +181,12 @@ function theme_klass_serve_css($filename) {
     theme_klass_send_cached_css($thestylepath, $filename, $lastmodified, $etagfile);
 }
 
+
 /**
- * Description
- * @param type|string $lastmodified
- * @param type|string $etag
+ * Set browser cache used in php header.
+ *
+ * @param  string $lastmodified
+ * @param  string $etag
  */
 function theme_klass_send_unmodified($lastmodified, $etag) {
     $lifetime = 60 * 60 * 24 * 60;
@@ -197,15 +203,14 @@ function theme_klass_send_unmodified($lastmodified, $etag) {
 
 /**
  * Cached css.
- * @param type|string $path
- * @param type|string $filename
- * @param type|string $lastmodified
- * @param type|string $etag
+ * @param  string $path
+ * @param  string $filename
+ * @param  int $lastmodified
+ * @param  string $etag
  */
 function theme_klass_send_cached_css($path, $filename, $lastmodified, $etag) {
     global $CFG;
     require_once($CFG->dirroot . '/lib/configonlylib.php');
-    // For min_enable_zlib_compression().
     // 60 days only - the revision may get incremented quite often.
     $lifetime = 60 * 60 * 24 * 60;
     header('Etag: "' . $etag . '"');
@@ -275,6 +280,7 @@ function theme_klass_get_html_for_settings(renderer_base $output, moodle_page $p
 
 /**
  * Loads the CSS Styles and put the font path
+ *
  * @return string
  */
 function theme_klass_set_fontwww() {
@@ -291,7 +297,7 @@ function theme_klass_set_fontwww() {
 
 /**
  * Process the css for font url
- * @param type|string $css
+ * @param string $css
  * @return string
  */
 function theme_klass_pre_css_set_fontwww($css) {
@@ -307,16 +313,15 @@ function theme_klass_pre_css_set_fontwww($css) {
     return $css;
 }
 
-/**
- * Logo Image URL Fetch from theme settings
- *
- * @return string
- */
+
+// Logo Image URL Fetch from theme settings.
+// @ return string.
 if (!function_exists('get_logo_url')) {
     /**
-     * get_logo_url
-     * @param type|string $type set value header
-     * @return type|string
+     * get_logo_url description
+     *
+     * @param  string $type
+     * @return image
      */
     function get_logo_url($type = 'header') {
         global $OUTPUT;
@@ -336,11 +341,11 @@ if (!function_exists('get_logo_url')) {
 }
 
 /**
- * Renderer the slideimg.
+ * Renderer the slideimg
  *
- * @param type|string $p
- * @param type|string $sliname
- * @return type|string
+ * @param int $p
+ * @param string $sliname
+ * @return image
  */
 function theme_klass_render_slideimg($p, $sliname) {
     global $PAGE, $OUTPUT;
@@ -355,9 +360,10 @@ function theme_klass_render_slideimg($p, $sliname) {
 }
 
 /**
- * Description.
- * @param type|string $setting
- * @param type|bool $format
+ * Function to get the theme setting
+ * @param  string $setting
+ * @param  boolean $format
+ * @return string
  */
 function theme_klass_get_setting($setting, $format = false) {
     global $CFG;
@@ -379,17 +385,13 @@ function theme_klass_get_setting($setting, $format = false) {
     }
 }
 
-/**
- *
- * Return the current theme url
- *
- * @return string
- */
+// Return the current theme url.
+// @ return string.
 if (!function_exists('theme_url')) {
     /**
-     * Theme_url.
+     * theme_url
      *
-     * @return type|string
+     * @return string
      */
     function theme_url() {
         global $CFG, $PAGE;
@@ -399,9 +401,8 @@ if (!function_exists('theme_url')) {
 }
 
 /**
- * Info
  * Get the infolinks from settings page and display on the footer.
- * @return string
+ * @return type|string
  */
 function theme_klass_infolink() {
     $infolink = theme_klass_get_setting('infolink');
