@@ -46,28 +46,51 @@ if ($numberofslides) { ?>
         for($s1 = 1; $s1 <= $numberofslides; $s1++):
             $clstxt2 = ($s1 == "1") ? ' active' : '';
             $slidecaption = theme_klass_get_setting('slide' . $s1 . 'caption', true);
-            $slideurl = theme_klass_get_setting('slide' . $s1 . 'url');
             $slideimg = theme_klass_render_slideimg($s1, 'slide' . $s1 . 'image');
             $icon = "fa-angle-right";
             if (right_to_left()) {
                 $icon = "fa-angle-left";
             }
-            $readmore = get_string("readmore", "theme_klass");
+            $slidebtn = theme_klass_get_setting('slide'.$s1.'urltext');
+            $slidebtn = theme_klass_lang($slidebtn);
+            $slideurl = theme_klass_get_setting('slide' . $s1 . 'url');
+            //$readmore = get_string("readmore", "theme_klass");
             $content = html_writer::start_tag('div', array('class' => "carousel-item ".
                 $clstxt2, 'style' => "background-image:url(".$slideimg.")"));
             $content .= html_writer::start_tag('div', array('class' => "carousel-overlay-content container-fluid"));
             $content .= html_writer::start_tag('div', array('class' => "content-wrap"));
-            if (!empty($slidecaption)) {
-                $content .= html_writer::tag('h2', $slidecaption);
+
+            if ($slidecaption != '' || $slidebtn != '') {
+                $content .= html_writer::start_tag('div', array('class' => 'carousel-content'));
+                $content .= html_writer::start_tag('h2');
+                $content .= $slidecaption;
+                $content .= html_writer::end_tag('h2');
+
+                if ($slidebtn != '') {
+                    $content .= html_writer::start_tag('div', array('class' => 'carousel-btn'));
+
+                    $content .= html_writer::start_tag('a', array('href' => $slideurl, 'class' => 'read-more'));
+                    $content .= $slidebtn;
+                    /*$content .= html_writer::start_tag('i', array('class' => 'fa fa-angle-right'));
+                    $content .= html_writer::end_tag('i');*/
+
+                    $content .= html_writer::end_tag('a');
+
+                    $content .= html_writer::end_tag('div');
+                }
+                $content .= html_writer::end_tag('div');
             }
+            /*if (!empty($slidecaption)) {
+                $content .= html_writer::tag('h2', $slidecaption);
+            }*/
             $content .= html_writer::empty_tag('br');
-            if (!empty($slideurl)) {
+           /* if (!empty($slideurl)) {
                 $content .= html_writer::start_tag('a', array('href' => $slideurl, 'class' => 'read-more'));
                 $content .= $readmore.' ';
                 $content .= html_writer::start_tag('i', array('class' => 'fa '.$icon));
                 $content .= html_writer::end_tag('i');
                 $content .= html_writer::end_tag('a');
-            }
+            }*/
             $content .= html_writer::end_tag('div');
             $content .= html_writer::end_tag('div');
             $content .= html_writer::end_tag('div');
@@ -80,10 +103,74 @@ if ($numberofslides) { ?>
 
     </div>
 
-      <a class="left carousel-control" href="#home-page-carousel" data-slide="prev"></a>
-      <a class="right carousel-control" href="#home-page-carousel" data-slide="next"></a>
+      <a class="left carousel-control carousel-control-prev" href="#home-page-carousel" data-slide="prev"></a>
+      <a class="right carousel-control carousel-control-next" href="#home-page-carousel" data-slide="next"></a>
 
   </div>
+
 </div>
+<style>
+
+.carousel-item-next.carousel-item-left,
+.carousel-item-prev.carousel-item-right {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+@supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
+  .carousel-item-next.carousel-item-left,
+  .carousel-item-prev.carousel-item-right {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.carousel-item-next,
+.active.carousel-item-right {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+@supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
+  .carousel-item-next,
+  .active.carousel-item-right {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+.carousel-item-prev,
+.active.carousel-item-left {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+@supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
+  .carousel-item-prev,
+  .active.carousel-item-left {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition-duration: .6s;
+  transition-property: opacity;
+}
+
+
+@supports ((-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)) {
+  .carousel-fade .carousel-item-next,
+  .carousel-fade .carousel-item-prev,
+  .carousel-fade .carousel-item.active,
+  .carousel-fade .active.carousel-item-left,
+  .carousel-fade .active.carousel-item-prev {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+</style>
 <!--E.O.Slider-->
 <?php }

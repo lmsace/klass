@@ -28,9 +28,11 @@ require_once(dirname(__FILE__) .'/includes/header.php');
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
-    'bodyattributes' => $bodyattributes
+    'bodyattributes' => $bodyattributes,
+    'headerlayout' => $headerlayout,
 ];
 
 echo $OUTPUT->render_from_template('theme_klass/login', $templatecontext);
 echo ($flatnavbar) ? $flatnavbar : "";
 require_once(dirname(__FILE__) .'/includes/footer.php');
+echo $footerlayout;

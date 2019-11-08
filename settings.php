@@ -136,6 +136,14 @@ if (is_siteadmin()) {
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_TEXT);
         $temp->add($setting);
 
+        // Slider button.
+        $name = 'theme_klass/slide' . $i . 'urltext';
+        $title = get_string('slidebutton', 'theme_klass');
+        $description = get_string('slidebuttondesc', 'theme_klass');
+        $default = 'lang:knowmore';
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_TEXT);
+        $temp->add($setting);
+
         // Slide Description Text.
         $name = 'theme_klass/slide' . $i . 'url';
         $title = get_string('slideurl', 'theme_klass');

@@ -285,11 +285,8 @@ function theme_klass_get_html_for_settings(renderer_base $output, moodle_page $p
  */
 function theme_klass_set_fontwww() {
     global $CFG, $PAGE;
-    if (empty($CFG->themewww)) {
-        $themewww = $CFG->wwwroot."/theme";
-    } else {
-        $themewww = $CFG->themewww;
-    }
+
+    $themewww = $CFG->wwwroot."/theme";
     $theme = theme_config::load('klass');
     $fontwww = '$fontwww: "'. $themewww.'/klass/fonts/"'.";\n";
     return $fontwww;
@@ -302,11 +299,8 @@ function theme_klass_set_fontwww() {
  */
 function theme_klass_pre_css_set_fontwww($css) {
     global $CFG, $PAGE;
-    if (empty($CFG->themewww)) {
-        $themewww = $CFG->wwwroot."/theme";
-    } else {
-        $themewww = $CFG->themewww;
-    }
+
+    $themewww = $CFG->wwwroot."/theme";
     $tag = '[[setting:fontwww]]';
     $theme = theme_config::load('klass');
     $css = str_replace($tag, $themewww.'/klass/fonts/', $css);
@@ -426,4 +420,19 @@ function theme_klass_infolink() {
     }
 
     return $content;
+}
+
+function theme_klass_lang($key = '') {
+    $pos = strpos($key, 'lang:');
+    if ($pos !== false) {
+        list($l, $k) = explode(":", $key);
+        if (get_string_manager()->string_exists($k, 'theme_klass')) {
+            $v = get_string($k, 'theme_klass');
+            return $v;
+        } else {
+            return $key;
+        }
+    } else {
+        return $key;
+    }
 }
