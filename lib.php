@@ -359,7 +359,7 @@ function theme_klass_render_slideimg($p, $sliname) {
  * @param  boolean $format
  * @return string
  */
-function theme_klass_get_setting($setting, $format = false) {
+function theme_klass_get_setting($setting, $format = true) {
     global $CFG;
     require_once($CFG->dirroot . '/lib/weblib.php');
     static $theme;

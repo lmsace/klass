@@ -228,6 +228,9 @@ h6 {
                     top: 13px;
                     transition: all 0.5s ease 0s;
                 }
+                &:nth-child(3) {
+                    margin-top: 0;
+                }
                 &:last-child {
                     transition: all 0.5s ease 0s;
                 }
@@ -244,6 +247,9 @@ h6 {
                 &:last-child {
                     transform: rotate(-45deg);
                     transition: all 0.5s ease 0s;
+                }
+                &:nth-child(3) {
+                    margin-top: 5px;
                 }
             }
         }
@@ -280,6 +286,9 @@ h6 {
             &:focus {
                 color: $white;
                 background: $color_cerulean_approx;
+                i.icon {
+                    color: $white;
+                }
             }
         }
     }
@@ -2164,6 +2173,9 @@ h6 {
         color: $color_cerulean_approx;
     }
 }
+#page-login-index #header button.btn {
+    display: none;
+}
 @media (min-width: 992px) {
     .header-main {
         .navbar-toggleable-md {
@@ -2337,8 +2349,10 @@ label {
             overflow: visible;
         }
     }
-    &.has-blocks h2 + .singlebutton {
-        margin-bottom: 10px;
+    &.has-blocks {
+        h2 + .singlebutton {
+            margin-bottom: 10px;
+        }
     }
     .card .singlebutton {
         margin-bottom: 10px;
@@ -3353,7 +3367,7 @@ table {
                     padding-right: 0;
                 }
                 .teachers {
-                    margin-right: 0;
+                    padding-right: 0;
                 }
                 .coursecat {
                     padding-right: 0;
@@ -3780,6 +3794,9 @@ table {
             background: $white;
         }
     }
+}
+#page-enrol-manual-manage .generaltable tbody>tr:nth-child(2n + 1)>td:first-child {
+    width: 30%;
 }
 .messaging-area-container .messaging-area .contacts-area .contacts .contact .information .name i.icon {
     color: $white;
@@ -4360,6 +4377,9 @@ div.backup-section + form {
 .no-overflow > .generaltable {
     margin-bottom: 20px;
 }
+.path-mod-wiki #region-main .form-check .form-check-input {
+    margin: .3rem 0 0 -1.25rem;
+}
 .path-mod-forum .forumheaderlist {
     .discussion {
         .topic {
@@ -4570,10 +4590,12 @@ form#movecourses table tbody > tr:nth-child(2n + 1) {
 .block-region .block .card-body {
     padding: 0;
     .card-title {
+        width: 100%;
         padding: 20px;
         background: $alabaster;
         border-bottom: 1px solid $color_quill_gray_approx;
         display: block !important;
+        margin-right: 0 !important;
     }
     .card-text {
         padding: 20px;
@@ -4738,7 +4760,7 @@ select.form-control:not([size]):not([multiple]) {
             }
         }
     }
-    .card .card-body .context-header-settings-menu .action-menu .menubar .dropdown-menu {
+    .context-header-settings-menu .action-menu .menubar .dropdown-menu {
         .dropdown-item {
             padding: 0;
             a {
@@ -4782,7 +4804,7 @@ div.editor_atto_toolbar button {
     .dir-rtl .category-listing .listitem .category-item-actions .menubar .dropdown {
         .dropdown-menu {
             left: auto;
-            right: 0;
+            right: auto;
         }
     }
 }
@@ -4927,7 +4949,35 @@ button.closebutton {
         }
     }
 }
-
+#page-my-index {
+    #region-main {
+        #block-region-content {
+            span .icon,
+            a .icon {
+                color: $color_allports_approx;
+            }
+            .block-myoverview .dropdown-menu .dropdown-item {
+                &:hover {
+                    .icon {
+                      color: $white;
+                    }
+                }
+                &:focus {
+                    .icon {
+                      color: $white;
+                    }
+                }
+                &:active {
+                      background-color: $color_allports_approx;
+                      color: $white;
+                    .icon {
+                      color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
 
 .dir-rtl .messaging-area-container .messaging-area .messages-area .messages-header .name-container .name {
     line-height: 10px;
@@ -4976,4 +5026,266 @@ button.closebutton {
 }
 .langimport form input {
     text-transform: inherit;
+}
+
+/*moodle-3.6*/
+
+#page-wrapper {
+    height: auto;
+}
+.dropdown .dropdown-menu {
+    .dropdown-divider {
+        margin: 0;
+    }
+}
+.block-myoverview {
+    .dropdown-menu {
+        .dropdown-item {
+            &.active {
+                color: $white;
+                background: $color_allports_approx;
+            }
+            &:hover {
+                color: $white;
+                background: $color_allports_approx;
+            }
+            &:focus {
+                color: $white;
+                background: $color_allports_approx;
+            }
+        }
+    }
+}
+.btn.btn-outline-secondary.dropdown-toggle {
+    &:hover {
+        color: $white;
+        background: $color_allports_approx;
+        i.icon {
+            color: $white;
+        }
+    }
+    &:focus {
+        color: $white;
+        background: $color_allports_approx;
+        box-shadow: none;
+        &:active {
+            color: $white;
+            box-shadow: none;
+        }
+        i.icon {
+            color: $white;
+        }
+    }
+    &:active {
+        color: $white;
+        background: $color_allports_approx;
+        i.icon {
+            color: $white;
+        }
+    }
+}
+
+button.close, .moodle-dialogue-base button.closebutton {
+    &:hover {
+        background: none;
+    }
+    &:focus {
+        background: none;
+    }
+}
+#course-category-listings .item-actions .menubar {
+    .action-menu-trigger .dropdown a.dropdown-toggle {
+        padding: 0;
+    }
+}
+.pagination {
+    .page-item {
+        .page-link {
+            &:focus {
+                box-shadow: none;
+            }
+            i.icon {
+                line-height: 24px;
+            }
+        }
+    }
+}
+.activity-navigation {
+    a.btn.btn-link {
+        color: $color_allports_approx;
+        &:hover {
+            color: $color_allports_approx;
+        }
+    }
+}
+.block-region .block .card-body .block-myoverview .card-title {
+    padding: 0;
+    background: none;
+    border: 0;
+    margin-right: 0 !important;
+    a {
+        font-size: 16px;
+        color: $color_allports_approx;
+    }
+}
+.block-timeline {
+    .dropdown-menu {
+        .dropdown-item {
+            &.active {
+                color: $white;
+                background: $color_allports_approx;
+            }
+            &:hover {
+                color: $white;
+                background: $color_allports_approx;
+            }
+            &:focus {
+                color: $white;
+                background: $color_allports_approx;
+            }
+            &:active {
+                color: $white;
+                background: $color_allports_approx;
+            }
+        }
+    }
+}
+.show > .btn-outline-secondary.dropdown-toggle {
+    background: $color_allports_approx;
+    i.icon {
+        color: $white;
+    }
+}
+#header .usermenu a.dropdown-toggle {
+    padding: 0;
+    box-shadow: none;
+}
+.action-menu .dropdown-toggle {
+    box-shadow: none;
+}
+
+@media (max-width: 600px) {
+    #page-header .card .card-body .flex-wrap .d-flex  {
+        display: block !important;
+    }
+}
+
+.header-main .message-drawer {
+    .header-container {
+        .input-group .input-group-prepend {
+            .input-group-text {
+                padding-right: 10px !important;
+            }
+        }
+        .badge {
+            background-color: $color_cerulean_approx !important;
+        }
+    }
+    .body-container {
+        .view-overview-body {
+            .section {
+                .badge {
+                    background-color: $color_cerulean_approx !important;
+                }
+                .btn {
+                    &:focus {
+                        color: inherit;
+                        &:hover {
+                            color: inherit;
+                        }
+                    }
+                }
+            }
+        }
+        .nav {
+            .nav-item {
+                a.nav-link {
+                    &.active {
+                        background: $color_allports_approx;
+                    }
+                }
+            }
+        }
+        .custom-control.custom-radio {
+            .custom-control-input:checked~.custom-control-label {
+                &:before {
+                    background-color: $color_cerulean_approx;
+                }
+            }
+            .custom-control-input:active~.custom-control-label {
+                &:before {
+                    background-color: rgba(0,115,165,.25);
+                }
+            }
+            .custom-control-input:checked:focus~.custom-control-label {
+                &:before {
+                    background-color: $color_cerulean_approx;
+                    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0,115,165,.25);
+                }
+            }
+        }
+        .switch {
+            input:checked + label {
+                &:before {
+                    background-color: $color_cerulean_approx;
+                }
+            }
+            input:focus + label {
+                &:before {
+                    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0,115,165,.25);
+                }
+            }
+            input:checked:focus + label {
+                &:before {
+                    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0,115,165,.25);
+                }
+            }
+        }
+    }
+}
+.block-region .block {
+    &.card .card-body {
+        padding: 0 !important;
+    }
+}
+.block-recentlyaccessedcourses {
+    .card .card-body.course-info-container {
+        padding: 1.25rem!important;
+    }
+}
+#region-main {
+    &.has-blocks {
+        .dashboard-card-deck .dashboard-card {
+            .card-body {
+                .card-title {
+                    width: 100%;
+                    color: $color_picton_blue_approx;
+                    border: 0;
+                    margin-right: 0 !important;
+                }
+            }
+        }
+        .block-myoverview {
+            .dashboard-card-deck .dashboard-card {
+                .card-body {
+                    border: 0;
+                    padding: 10px !important;
+                    .card-title {
+                        a.coursename {
+                            color: initial;
+                        }
+                    }
+                }
+            }
+            .progress {
+                border-radius: 5px;
+                .progress-bar {
+                    background-color: $color_cerulean_approx;
+                }
+            }
+        }
+    }
+}
+.notification-area .control-area .content .content-item-container.selected {
+    background-color: $color_allports_approx;
 }

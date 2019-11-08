@@ -77,7 +77,7 @@ class theme_klass_core_course_renderer extends core_course_renderer {
                 if (right_to_left()) {
                     $icon = "fa-angle-double-left";
                 }
-                $content .= '<div class="col-md-3"><div class="fp-coursebox"><div class="fp-coursethumb"><a href="'.$courseurl.'"><img src="'.$imgurl.'" width="243" height="165" alt="'.$course->fullname.'"></a></div><div class="fp-courseinfo"><h5><a href="'.$courseurl.'">'.$course->fullname.'</a></h5><div class="readmore"><a href="'.$courseurl.'">'.get_string("readmore", "theme_klass").'<i class="fa '.$icon.'"></i></a></div></div></div></div>';
+                $content .= '<div class="col-md-3"><div class="fp-coursebox"><div class="fp-coursethumb"><a href="'.$courseurl.'"><img src="'.$imgurl.'" width="243" height="165" alt=""></a></div><div class="fp-courseinfo"><h5><a href="'.$courseurl.'">'.$course->get_formatted_name().'</a></h5><div class="readmore"><a href="'.$courseurl.'">'.get_string("readmore", "theme_klass").'<i class="fa '.$icon.'"></i></a></div></div></div></div>';
                 if ( ( $cocnt % 4) == "0") {
                     $content .= '<div class="clearfix hidexs"></div>';
                 }
@@ -155,7 +155,7 @@ class theme_klass_core_course_renderer extends core_course_renderer {
                 if (right_to_left()) {
                     $icon = "fa-angle-double-left";
                 }
-                $content .= '<div class="col-md-3"><div class="fp-coursebox"><div class="fp-coursethumb"><a href="'.$courseurl.'"><img src="'.$imgurl.'" width="243" height="165" alt="'.$course->fullname.'"></a></div><div class="fp-courseinfo"><h5><a href="'.$courseurl.'">'.$course->fullname.'</a></h5><div class="readmore"><a href="'.$courseurl.'">'.get_string("readmore", "theme_klass").'&nbsp; <i class="fa '.$icon.'"></i></a></div></div></div></div>';
+                $content .= '<div class="col-md-3"><div class="fp-coursebox"><div class="fp-coursethumb"><a href="'.$courseurl.'"><img src="'.$imgurl.'" width="243" height="165" alt=""></a></div><div class="fp-courseinfo"><h5><a href="'.$courseurl.'">'.$course->get_formatted_name().'</a></h5><div class="readmore"><a href="'.$courseurl.'">'.get_string("readmore", "theme_klass").'&nbsp; <i class="fa '.$icon.'"></i></a></div></div></div></div>';
                 if (($cocnt % 4) == "0") {
                     $content .= '<div class="clearfix hidexs"></div>';
                 }
