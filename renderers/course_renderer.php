@@ -56,8 +56,8 @@ class theme_klass_core_course_renderer extends core_course_renderer {
                 $noimgurl = $OUTPUT->image_url('no-image', 'theme');
                 $courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
                 if ($course instanceof stdClass) {
-                    require_once($CFG->libdir. '/coursecatlib.php');
-                    $course = new course_in_list($course);
+                    /* require_once($CFG->libdir. '/coursecatlib.php');.*/
+                    $course = new core_course_list_element($course);
                 }
                 $imgurl = '';
                 $context = context_course::instance($course->id);
@@ -113,7 +113,7 @@ class theme_klass_core_course_renderer extends core_course_renderer {
     public function frontpage_available_courses() {
         /* available courses */
         global $CFG, $OUTPUT;
-        require_once($CFG->libdir. '/coursecatlib.php');
+        // require_once($CFG->libdir. '/coursecatlib.php');.
         $chelper = new coursecat_helper();
         $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_EXPANDED)->set_courses_display_options(array(
         'recursive' => true,
@@ -121,8 +121,8 @@ class theme_klass_core_course_renderer extends core_course_renderer {
         'viewmoreurl' => new moodle_url('/course/index.php'),
         'viewmoretext' => new lang_string('fulllistofcourses')));
         $chelper->set_attributes(array('class' => 'frontpage-course-list-all'));
-        $courses = coursecat::get(0)->get_courses($chelper->get_courses_display_options());
-        $totalcount = coursecat::get(0)->get_courses_count($chelper->get_courses_display_options());
+        $courses = core_course_category::get(0)->get_courses($chelper->get_courses_display_options());
+        $totalcount = core_course_category::get(0)->get_courses_count($chelper->get_courses_display_options());
         $courseids = array_keys($courses);
         $newcourse = get_string('availablecourses');
         $header = '<div id="frontpage-course-list"><h2>'.$newcourse.'</h2><div class="courses frontpage-course-list-all"><div class="row">'; $footer = '</div></div></div>';
@@ -134,8 +134,8 @@ class theme_klass_core_course_renderer extends core_course_renderer {
                 $noimgurl = $OUTPUT->image_url('no-image', 'theme');
                 $courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
                 if ($course instanceof stdClass) {
-                    require_once($CFG->libdir. '/coursecatlib.php');
-                    $course = new course_in_list($course);
+                    // require_once($CFG->libdir. '/coursecatlib.php');.
+                    $course = new core_course_list_element($course);
                 }
                 $imgurl = '';
                 $context = context_course::instance($course->id);
@@ -187,8 +187,8 @@ class theme_klass_core_course_renderer extends core_course_renderer {
             return '';
         }
         if ($course instanceof stdClass) {
-            require_once($CFG->libdir. '/coursecatlib.php');
-            $course = new course_in_list($course);
+            // require_once($CFG->libdir. '/coursecatlib.php');.
+            $course = new core_course_list_element($course);
         }
         $content = '';
         $classes = trim('coursebox clearfix '. $additionalclasses);

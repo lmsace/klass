@@ -774,6 +774,7 @@ h6 {
     .header-main-content {
         background: $color_cerulean_approx;
         .navbar-toggleable-md {
+            padding-bottom: 10px;
             .infoarea {
                 a.nav-link {
                     color: $white;
@@ -1219,6 +1220,9 @@ h6 {
         }
     }
     .header-main {
+        .navbar .navbar-inner .nav-item .dropdown-menu a {
+            border: 0;
+        }
         .header-main-menubar {
             .navbar-text {
                 display: block;
@@ -1424,6 +1428,9 @@ h6 {
     .carousel-control {
         display: none;
     }
+/*     .carousel-inner .carousel-item {
+        height: 246px;
+    } */
     .mform .form-inline .form-control {
         max-width: none;
     }
@@ -2075,7 +2082,7 @@ h6 {
         border: 0;
         position: absolute;
         top: 20px;
-        right: 5px;
+        right: 10px;
     }
     .header {
         h2 {
@@ -2173,8 +2180,20 @@ h6 {
         color: $color_cerulean_approx;
     }
 }
-#page-login-index #header button.btn {
-    display: none;
+#page-login-index {
+    #header button.btn {
+        display: none;
+    }
+    .potentialidplist {
+        .potentialidp {
+            a {
+                margin-bottom: 5px;
+                img {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
 }
 @media (min-width: 992px) {
     .header-main {
@@ -3592,6 +3611,9 @@ table {
             min-height: auto;
             .summary {
                 padding: 0;
+                p img {
+                    width: auto;
+                }
             }
             .teachers {
                 margin: 0;
@@ -4415,6 +4437,26 @@ div.backup-section + form {
         padding: 8px;
     }
 }
+tr.discussion {
+    td .dropdown .dropdown-menu {
+        .dropdown-item {
+          /*  padding: 0;*/
+        }
+    }
+    .dropdown .btn {
+        &:focus {
+            background-color: transparent;
+        }
+        &:active {
+            background-color: transparent;
+        }
+    }
+    .btn {
+        i.icon {
+            color: $color_allports_approx;
+        }
+    }
+}
 #page-admin-tool-messageinbound-index {
     thead .handler-function {
         color: $white;
@@ -4572,7 +4614,7 @@ form#movecourses table tbody > tr:nth-child(2n + 1) {
 }
 .path-grade-report-grader {
     #region-main {
-        width: 100%;
+        /*width: 100%;*/
     }
 }
 .userenrolment th {
@@ -4651,7 +4693,7 @@ select.form-control:not([size]):not([multiple]) {
     .forumaddnew {
         margin-bottom: 10px;
     }
-    .forumpost .posting {
+    .forumpost {
         p img {
             width: 100%;
             max-width: 300px;
@@ -4659,8 +4701,19 @@ select.form-control:not([size]):not([multiple]) {
             display: block;
         }
         .attachedimages {
-            max-width: 300px;
+            margin-top: 20px;
+            max-width: 500px;
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
         }
+        /*.header + div + div {
+            max-width: 500px;
+            img {
+                width: 100%;
+            }
+        }*/
     }
 }
 .card .course_list .coursebox {
@@ -4854,10 +4907,15 @@ div.editor_atto_toolbar button {
         float: none;
     }
 }
-.block_myoverview .content-centred .nav.nav-pills .nav-item .nav-link.active {
-    background: $color_cerulean_approx;
-    &:hover {
-        color: $white;
+.block_myoverview {
+    .content-centred .nav.nav-pills .nav-item .nav-link.active {
+        background: $color_cerulean_approx;
+        &:hover {
+            color: $white;
+        }
+    }
+    .paged-content-page-container {
+        margin-top: 10px;
     }
 }
 .list-group-item {
@@ -4998,6 +5056,14 @@ button.closebutton {
             .courses-view-course-item {
                 flex-basis: auto;
             }
+        }
+    }
+    .pagelayout-frontpage {
+        fieldset.coursesearchbox label {
+            display: block;
+        }
+        #coursesearch input[type="text"] {
+            display: inline-block;
         }
     }
 }
@@ -5170,7 +5236,7 @@ button.close, .moodle-dialogue-base button.closebutton {
     }
 }
 
-.header-main .message-drawer {
+.header-main .message-app {
     .header-container {
         .input-group .input-group-prepend {
             .input-group-text {
@@ -5243,6 +5309,15 @@ button.close, .moodle-dialogue-base button.closebutton {
         }
     }
 }
+.message-app {
+    .body-container {
+        .nav-pills .nav-link {
+            &.active {
+                background-color: $color_allports_approx;
+            }
+        }
+    }
+}
 .block-region .block {
     &.card .card-body {
         padding: 0 !important;
@@ -5288,4 +5363,30 @@ button.close, .moodle-dialogue-base button.closebutton {
 }
 .notification-area .control-area .content .content-item-container.selected {
     background-color: $color_allports_approx;
+}
+#recipientform,
+.langimport {
+    select {
+        max-width: 100%;
+    }
+}
+
+/*Moodle-3.7*/
+
+.block_recentlyaccessedcourses .paging-bar-container {
+    margin-top: 0;
+    .pagination {
+        .page-item {
+            .page-link {
+                color: $color_cerulean_approx;
+            }
+        }
+    }
+}
+table.table-striped {
+    thead {
+        th a {
+            color: $color_cerulean_approx;
+        }
+    }
 }

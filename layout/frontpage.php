@@ -50,7 +50,7 @@ echo $OUTPUT->doctype() ?>
 <?php
 require_once(dirname(__FILE__) . '/includes/header.php');
 echo $headerlayout;
- ?>
+    ?>
 <!--Custom theme header-->
 <div class="">
     <?php
@@ -71,7 +71,8 @@ echo $headerlayout;
     <h2><?php echo $whotitle; ?></h2>
     <?php if ($whodesc) { ?>
         <p><?php echo $whodesc; ?></p>
-        <?php } ?>
+        <?php
+    } ?>
   </div>
 </div>
     <?php
@@ -81,8 +82,8 @@ echo $headerlayout;
     <header id="page-header" class="clearfix">
         <?php echo $html->heading; ?>
         <!-- <div id="page-navbar" class="clearfix">
-            <nav class="breadcrumb-nav"><?php //echo $OUTPUT->navbar(); ?></nav>
-            <div class="breadcrumb-button"><?php //echo $OUTPUT->page_heading_button(); ?></div>
+            <nav class="breadcrumb-nav"><?php // echo $OUTPUT->navbar(); ?></nav>
+            <div class="breadcrumb-button"><?php // echo $OUTPUT->page_heading_button(); ?></div>
         </div> -->
         <div id="course-header">
             <?php echo $OUTPUT->course_header(); ?>
@@ -98,7 +99,7 @@ echo $headerlayout;
     ?>
         <div id="<?php echo $regionbsid ?>"  class="<?php echo $class; ?>">
                     <?php
-                        //echo $courserenderer->new_courses();
+                        // echo $courserenderer->new_courses();.
                         echo $OUTPUT->course_content_header();
                         echo $OUTPUT->main_content();
                         echo $OUTPUT->course_content_footer();

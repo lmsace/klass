@@ -35,7 +35,8 @@ if ($numberofslides) { ?>
                  $clstxt = ($s == "0") ? ' class="active"' : '';
             ?>
      <li data-target="#home-page-carousel" data-slide-to="<?php echo $s; ?>" <?php echo $clstxt; ?>></li>
-            <?php endfor; ?>
+            <?php
+        endfor; ?>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -54,7 +55,7 @@ if ($numberofslides) { ?>
             $slidebtn = theme_klass_get_setting('slide'.$s1.'urltext');
             $slidebtn = theme_klass_lang($slidebtn);
             $slideurl = theme_klass_get_setting('slide' . $s1 . 'url');
-            //$readmore = get_string("readmore", "theme_klass");
+             /*$readmore = get_string("readmore", "theme_klass");.*/
             $content = html_writer::start_tag('div', array('class' => "carousel-item ".
                 $clstxt2, 'style' => "background-image:url(".$slideimg.")"));
             $content .= html_writer::start_tag('div', array('class' => "carousel-overlay-content container-fluid"));
@@ -84,7 +85,7 @@ if ($numberofslides) { ?>
                 $content .= html_writer::tag('h2', $slidecaption);
             }*/
             $content .= html_writer::empty_tag('br');
-           /* if (!empty($slideurl)) {
+            /* if (!empty($slideurl)) {
                 $content .= html_writer::start_tag('a', array('href' => $slideurl, 'class' => 'read-more'));
                 $content .= $readmore.' ';
                 $content .= html_writer::start_tag('i', array('class' => 'fa '.$icon));
