@@ -62,7 +62,7 @@ echo $headerlayout;
 </div>
     <?php
     $whotitle = theme_klass_get_setting('whoweare_title');
-    $whodesc = theme_klass_get_setting('whoweare_description');
+    $whodesc = theme_klass_get_setting('whoweare_description', 'format_html');
     if (!empty($whotitle) || !empty($whodesc)) {
 ?>
 <!--Custom theme slider-->

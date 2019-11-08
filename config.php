@@ -30,7 +30,7 @@ $THEME->doctype = 'html5';
 
 $THEME->parents = array('boost');
 
-$THEME->sheets = [];
+$THEME->sheets = ['theme'];
 
 $THEME->javascripts_footer = array('theme');
 
@@ -54,9 +54,9 @@ $THEME->prescsscallback = 'theme_klass_get_pre_scss';
 
 $THEME->extrascsscallback = 'theme_klass_get_extra_scss';
 
-$THEME->scss = function($theme) {
+/*$THEME->scss = function($theme) {
     return theme_klass_get_main_scss_content($theme);
-};
+};*/
 
 $THEME->layouts = array(
         // Most backwards compatible layout without the blocks - this is the layout used by default.
