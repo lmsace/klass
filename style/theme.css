@@ -887,6 +887,14 @@ h6 {
      color: #fff;
      background: #009fe5;
 }
+.dropdown-menu > li > a:active {
+     color: #fff;
+     background: #009fe5;
+}
+.dropdown-menu > li > a.active {
+     color: #fff;
+     background: #009fe5;
+}
  .dropdown-submenu > a::after {
      font-family: FontAwesome;
      line-height: 1;
@@ -3640,7 +3648,8 @@ table.discussion-list thead th a, table.discussion-list thead th a:hover {
  .calendar-event-panel {
      background: none;
 }
- @media (max-width: 320px) {
+
+@media (max-width: 320px) {
      .navbar .popover-region {
          margin-right: 5px;
     }
@@ -4364,9 +4373,29 @@ tr.discussion .btn i.icon {
 .pagelayout-frontpage #page {
      margin-top: 50px;
 }
+.pagelayout-frontpage #coursesearch {
+     margin-top: 0;
+     display: block;
+}
+.pagelayout-frontpage .box.py-3.mdl-align {
+     box-shadow: 0 0 8px #d5d5d5;
+}
+.pagelayout-frontpage #coursesearch .coursesearchbox label {
+     display: block;
+     color: #c02424;
+     font-family: arvoregular, Arial, Helvetica, sans-serif;
+     font-size: 18px;
+     margin-bottom: 10px;
+}
  .pagelayout-frontpage #coursesearch input[type="text"] {
-     width: 225px;
+     width: 425px;
+     max-width: none;
      display: inline-block
+}
+@media(max-width: 767px) {
+      .pagelayout-frontpage #coursesearch input[type="text"] {
+          width: 300px;
+      }
 }
  .editor_atto_menu .dropdown-menu > li > a {
      padding: 10px 15px;
@@ -4705,4 +4734,3 @@ tr.discussion .btn i.icon {
  table.table-striped thead th a {
      color: #009fe5;
 }
- 
