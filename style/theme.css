@@ -316,9 +316,9 @@ h6 {
      margin: 0;
      text-align: left;
 }
- .dir-rtl button {
+ /*.dir-rtl button {
      margin: 0 5px 10px 0;
-}
+}*/
  .dir-rtl input[type="button"] {
      margin: 0 5px 10px 0;
 }
@@ -464,9 +464,9 @@ h6 {
  .dir-rtl input[name="searchwikicontent"] + input[type="submit"] {
      margin: 0 5px 10px 0;
 }
- .dir-rtl select + input[type="submit"] {
+ /*.dir-rtl select + input[type="submit"] {
      margin: 0 5px 10px 0;
-}
+}*/
  .dir-rtl input[type="password"] + input[type="submit"] {
      margin: 0 5px 10px 0;
 }
@@ -3482,6 +3482,7 @@ table.discussion-list thead th a, table.discussion-list thead th a:hover {
  .btn:focus {
      color: #fff;
      outline: none;
+     box-shadow: none;
 }
  .btn:active {
      outline: none;
@@ -3648,8 +3649,10 @@ table.discussion-list thead th a, table.discussion-list thead th a:hover {
  .calendar-event-panel {
      background: none;
 }
-
-@media (max-width: 320px) {
+.page-calendar-view .modal-dialog .modal-content .modal-body form #fitem_id_description #id_description {
+     width: 100%;
+}
+ @media (max-width: 320px) {
      .navbar .popover-region {
          margin-right: 5px;
     }
@@ -4377,9 +4380,6 @@ tr.discussion .btn i.icon {
      margin-top: 0;
      display: block;
 }
-.pagelayout-frontpage .box.py-3.mdl-align {
-     box-shadow: 0 0 8px #d5d5d5;
-}
 .pagelayout-frontpage #coursesearch .coursesearchbox label {
      display: block;
      color: #c02424;
@@ -4733,4 +4733,20 @@ tr.discussion .btn i.icon {
 }
  table.table-striped thead th a {
      color: #009fe5;
+}
+/* Moodle-3.8*/
+@media (max-width: 767px) {
+     #page-admin-setting-themesettingklass #page form .settingsform div:last-child .offset-sm-3.col-sm-3 {
+          max-width: none;
+          flex: auto;
+     }
+}
+.header-main .navbar-toggler.nocontent-navbar {
+     display: none;
+}
+.page-context-header .header-button-group a:focus {
+     color: #c02424;
+}
+#frontpage-category-names h2, #frontpage-category-combo h2 {
+     margin-top: 30px;
 }
