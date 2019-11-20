@@ -432,14 +432,14 @@ h6 {
  .dir-rtl .breadcrumb > li > .divider:before {
      content: "\f100";
 }
- .dir-rtl input[type="radio"] + label {
+ /*.dir-rtl input[type="radio"] + label {
      padding-right: 0.2em;
      padding-left: 0;
 }
  .dir-rtl input[type="checkbox"] + label {
      padding-right: 0.2em;
      padding-left: 0;
-}
+}*/
  .dir-rtl input.form-submit {
      margin: 0 5px 10px 0;
 }
@@ -1113,16 +1113,6 @@ h6 {
      .dir-rtl .header-main .row-fluid [class*="span"]:first-child {
          margin-right: 0;
     }
-     .dir-rtl .coursebox .content .summary {
-         padding: 0 120px 0 0;
-    }
-     .dir-rtl .coursebox .content .coursecat {
-         padding: 0 120px 0 0;
-    }
-     .dir-rtl .coursebox .content .teachers {
-         padding-right: 120px;
-         padding-left: 0;
-    }
      .carousel-overlay-content {
          width: 100%;
          height: 500px;
@@ -1200,15 +1190,6 @@ h6 {
     }
      .carousel-inner .carousel-item {
          min-height: 385px;
-    }
-     .coursebox .content .summary {
-         padding: 0 0 0 120px;
-    }
-     .coursebox .content .coursecat {
-         padding: 0 0 0 120px;
-    }
-     .coursebox .content .teachers {
-         padding-left: 120px;
     }
      #frontpage-course-list .row-fluid [class*="span"]:nth-child(5n + 1) {
          margin-left: 0;
@@ -3059,13 +3040,13 @@ table.discussion-list thead th a, table.discussion-list thead th a:hover {
          left: auto;
     }
      .dir-rtl .coursebox .content .summary {
-         padding: 0 240px 0 0;
+         padding: 0 170px 0 0;
     }
      .dir-rtl .coursebox .content .coursecat {
-         padding: 0 110px 0 0;
+         padding: 0 170px 0 0;
     }
      .dir-rtl .coursebox .content .teachers {
-         padding-right: 240px;
+         padding-right: 170px;
          padding-left: 0;
     }
      .loginbox .loginform .form-label {
@@ -3103,14 +3084,15 @@ table.discussion-list thead th a, table.discussion-list thead th a:hover {
          left: 0;
     }
      .coursebox .content .summary {
-         padding: 0 0 0 240px;
+         padding: 0 0 0 170px;
+         margin: 0 5px 5px;
     }
      .coursebox .content .coursecat {
          padding: 0 0 0 110px;
     }
      .coursebox .content .teachers {
          padding-left: 0;
-         margin-left: 240px;
+         margin-left: 170px;
     }
 }
  @media (max-width: 574px) {
@@ -3153,7 +3135,7 @@ table.discussion-list thead th a, table.discussion-list thead th a:hover {
          margin-top: 0;
     }
      .coursebox .content .summary {
-         margin-top: 140px;
+         margin-top: 120px;
     }
      .coursebox .content .courseimage {
          left: 0;
@@ -3195,9 +3177,6 @@ table.discussion-list thead th a, table.discussion-list thead th a:hover {
      background: #62bee6;
      margin: 9px 0;
 }
- #frontpage-category-combo .coursebox {
-     min-height: 240px;
-}
  #frontpage-category-combo .coursebox.collapsed {
      min-height: auto;
 }
@@ -3205,14 +3184,14 @@ table.discussion-list thead th a, table.discussion-list thead th a:hover {
      min-height: auto;
 }
  #frontpage-course-list .coursebox {
-     min-height: 240px;
+     /*min-height: 240px;*/
 }
  #frontpage-course-list .coursebox.content-block {
      min-height: auto;
 }
  .coursebox {
-     min-height: 240px;
-     padding: 7px 14px;
+     /*min-height: 240px;*/
+     padding: 15px 20px 20px;
      border-style: solid;
      border-color: #d5d5d5;
      border-radius: 2px;
@@ -3258,6 +3237,14 @@ table.discussion-list thead th a, table.discussion-list thead th a:hover {
      float: none;
      width: auto;
 }
+.coursebox .content .summary .no-overflow {
+     max-height: 70px;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     -webkit-line-clamp: 3;
+     -webkit-box-orient: vertical;
+     display: -webkit-box;
+}
  .coursebox .content .summary p {
      line-height: 24px;
      color: #4e4e4e;
@@ -3278,8 +3265,9 @@ table.discussion-list thead th a, table.discussion-list thead th a:hover {
 }
  .coursebox .content .courseimage {
      float: none;
-     max-width: 200px;
-     width: auto;
+     max-width: 140px;
+     width: 100%;
+     height: 100px;
      margin-top: 5px;
      clear: none;
      position: absolute;
@@ -3287,8 +3275,9 @@ table.discussion-list thead th a, table.discussion-list thead th a:hover {
 }
  .coursebox .content .courseimage img {
      width: 100%;
-     max-width: 200px;
-     max-height: 150px;
+     height: 100%;
+     max-width: none;
+     max-height: none;
      object-fit: cover;
 }
  .coursebox .content .coursefile {

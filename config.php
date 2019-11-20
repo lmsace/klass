@@ -50,10 +50,10 @@ $THEME->requiredblocks = '';
 
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 
-$THEME->prescsscallback = 'theme_klass_get_pre_scss';
+/*$THEME->prescsscallback = 'theme_klass_get_pre_scss';
 
 $THEME->extrascsscallback = 'theme_klass_get_extra_scss';
-
+*/
 /*$THEME->scss = function($theme) {
     return theme_klass_get_main_scss_content($theme);
 };*/

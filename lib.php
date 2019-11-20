@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
  * @param string $theme
  * @return string $scss.
  */
-function theme_klass_get_pre_scss($theme) {
+/*function theme_klass_get_pre_scss($theme) {
     global $CFG;
     $scss = '';
     // Prepend pre-scss.
@@ -39,7 +39,7 @@ function theme_klass_get_pre_scss($theme) {
     $scss .= theme_klass_set_logo($scss, $logo);
     $scss .= theme_klass_set_fontwww();
     return $scss;
-}
+}*/
 
 /**
  * Add the custom scss into the theme scss.
@@ -47,17 +47,17 @@ function theme_klass_get_pre_scss($theme) {
  * @param string $theme
  * @return string
  */
-function theme_klass_get_extra_scss($theme) {
+/*function theme_klass_get_extra_scss($theme) {
     return !empty($theme->settings->customcss) ? $theme->settings->customcss : '';
 }
-
+*/
 /**
  * Get the main scss content for the theme.
  *
  * @param string $theme
  * @return string
  */
-function theme_klass_get_main_scss_content($theme) {
+/*function theme_klass_get_main_scss_content($theme) {
     global $CFG;
     $theme = theme_config::load('boost');
     $scss = theme_boost_get_main_scss_content($theme);
@@ -66,7 +66,7 @@ function theme_klass_get_main_scss_content($theme) {
         $scss .= file_get_contents($themescssfile);
     }
     return $scss;
-}
+}*/
 
 /**
  * Load the Jquery and migration files
@@ -306,7 +306,6 @@ function theme_klass_pre_css_set_fontwww($css) {
     $css = str_replace($tag, $themewww.'/klass/fonts/', $css);
     return $css;
 }
-
 
 // Logo Image URL Fetch from theme settings.
 // @ return string.
