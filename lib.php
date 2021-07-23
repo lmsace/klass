@@ -343,12 +343,16 @@ if (!function_exists('get_logo_url')) {
  */
 function theme_klass_render_slideimg($p, $sliname) {
     global $PAGE, $OUTPUT;
+    static $theme;
+    if (empty($theme)) {
+        $theme = theme_config::load('klass');
+    }
     $nos = theme_klass_get_setting('numberofslides');
     $i = $p % 3;
     $slideimage = $OUTPUT->image_url('home/slide'.$i, 'theme');
     // Get slide image or fallback to default.
     if (theme_klass_get_setting($sliname)) {
-        $slideimage = $PAGE->theme->setting_file_url($sliname , $sliname);
+        $slideimage = $theme->setting_file_url($sliname , $sliname);
     }
     return $slideimage;
 }
