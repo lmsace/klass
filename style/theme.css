@@ -3331,8 +3331,6 @@ table.generalbox tbody tr td {
 #frontpage-category-combo .coursebox.content-block {
     min-height: auto;
 }
-#frontpage-course-list .coursebox {
-}
 #frontpage-course-list .coursebox.content-block {
     min-height: auto;
 }
@@ -4272,8 +4270,6 @@ form#movecourses table tbody > tr:nth-child(2n + 1) > th {
 .path-grade-report .gradeparent table {
     width: 100%;
 }
-.path-grade-report-grader {
-}
 .userenrolment th {
     background: var(--color_cerulean_approx);
 }
@@ -4841,15 +4837,19 @@ button.close:focus,
 .header-main .message-app .body-container .nav .nav-item a.nav-link.active {
     background: var(--color_allports_approx);
 }
-.header-main .message-app .body-container .custom-control.custom-radio .custom-control-input:checked + .custom-control-label:before,
-.header-main .message-app .body-container .custom-control.custom-switch .custom-control-input:checked + .custom-control-label:before {
+.header-main .message-app .body-container .custom-control.custom-radio
+.custom-control-input:checked + .custom-control-label:before,
+.header-main .message-app .body-container .custom-control.custom-switch
+.custom-control-input:checked + .custom-control-label:before {
     background-color: var(--color_cerulean_approx);
     border-color: var(--color_cerulean_approx);
 }
-.header-main .message-app .body-container .custom-control.custom-radio .custom-control-input:active ~ .custom-control-label:before {
+.header-main .message-app .body-container .custom-control.custom-radio
+.custom-control-input:active ~ .custom-control-label:before {
     background-color: rgba(0, 115, 165, .25);
 }
-.header-main .message-app .body-container .custom-control.custom-radio .custom-control-input:checked:focus ~ .custom-control-label:before {
+.header-main .message-app .body-container .custom-control.custom-radio
+.custom-control-input:checked:focus ~ .custom-control-label:before {
     background-color: var(--color_cerulean_approx);
     box-shadow: 0 0 0 1px var(--white), 0 0 0 0.2rem rgba(0, 115, 165, .25);
 }
