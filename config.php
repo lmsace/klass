@@ -21,6 +21,7 @@
  * @copyright  2015 LMSACE Dev Team , lmsace.com
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 defined('MOODLE_INTERNAL') || die;
 require_once(__DIR__ . '/lib.php');
 
@@ -30,7 +31,7 @@ $THEME->doctype = 'html5';
 
 $THEME->parents = array('boost');
 
-$THEME->sheets = ['theme'];
+$THEME->sheets = ['theme' , 'custom'];
 
 $THEME->javascripts_footer = array('theme');
 
@@ -49,14 +50,6 @@ $THEME->csspostprocess = 'theme_klass_process_css';
 $THEME->requiredblocks = '';
 
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
-
-/*$THEME->prescsscallback = 'theme_klass_get_pre_scss';
-
-$THEME->extrascsscallback = 'theme_klass_get_extra_scss';
-*/
-/*$THEME->scss = function($theme) {
-    return theme_klass_get_main_scss_content($theme);
-};*/
 
 $THEME->layouts = array(
         // Most backwards compatible layout without the blocks - this is the layout used by default.

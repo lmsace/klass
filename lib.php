@@ -23,50 +23,6 @@
  */
 
 defined('MOODLE_INTERNAL') || die();
-/**
- * Get the pre scss for the theme
- * @param string $theme
- * @return string $scss.
- */
-/*function theme_klass_get_pre_scss($theme) {
-    global $CFG;
-    $scss = '';
-    // Prepend pre-scss.
-    if (!empty($theme->settings->scsspre)) {
-        $scss .= $theme->settings->scsspre;
-    }
-    $logo = $theme->setting_file_url('logo', 'logo');
-    $scss .= theme_klass_set_logo($scss, $logo);
-    $scss .= theme_klass_set_fontwww();
-    return $scss;
-}*/
-
-/**
- * Add the custom scss into the theme scss.
- *
- * @param string $theme
- * @return string
- */
-/*function theme_klass_get_extra_scss($theme) {
-    return !empty($theme->settings->customcss) ? $theme->settings->customcss : '';
-}
-*/
-/**
- * Get the main scss content for the theme.
- *
- * @param string $theme
- * @return string
- */
-/*function theme_klass_get_main_scss_content($theme) {
-    global $CFG;
-    $theme = theme_config::load('boost');
-    $scss = theme_boost_get_main_scss_content($theme);
-    $themescssfile = $CFG->dirroot.'/theme/klass/scss/preset/theme.scss';
-    if ( file_exists($themescssfile) ) {
-        $scss .= file_get_contents($themescssfile);
-    }
-    return $scss;
-}*/
 
 /**
  * Load the Jquery and migration files
@@ -344,10 +300,12 @@ function theme_klass_render_slideimg($p, $sliname) {
     global $PAGE, $OUTPUT;
     $nos = theme_klass_get_setting('numberofslides');
     $i = $p % 3;
-    $slideimage = $OUTPUT->image_url('home/slide'.$i, 'theme');
-    // Get slide image or fallback to default.
+    $slideimage = '';
     if (theme_klass_get_setting($sliname)) {
         $slideimage = $PAGE->theme->setting_file_url($sliname , $sliname);
+    }
+    if (empty($sliname)) {
+        $slideimage = '';
     }
     return $slideimage;
 }

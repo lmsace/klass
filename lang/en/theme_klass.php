@@ -183,3 +183,4 @@ $string['phone'] = "Phone";
 $string['email'] = "E-mail";
 $string['get_social'] = "Get Social";
 $string['home'] = "Home";
+$string['privacy:metadata'] = 'The klass theme does not store any personal data about any user.';

@@ -38,7 +38,7 @@ class theme_klass_core_course_renderer extends core_course_renderer {
      */
     public function new_courses() {
         /* New Courses */
-        global $CFG, $OUTPUT;
+        global $CFG;
         $newcourse = get_string('newcourses', 'theme_klass');
         $header = '<div id="frontpage-course-list"><h2>'.$newcourse.'</h2><div class="courses frontpage-course-list-all"><div class="row">'; $footer = '</div></div></div>';
         $cocnt = 1;
@@ -53,10 +53,9 @@ class theme_klass_core_course_renderer extends core_course_renderer {
                 }
                 $courseid = $cc->id;
                 $course = get_course($courseid);
-                $noimgurl = $OUTPUT->image_url('no-image', 'theme');
+                $noimgurl = $this->output->image_url('no-image', 'theme');
                 $courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
                 if ($course instanceof stdClass) {
-                    /* require_once($CFG->libdir. '/coursecatlib.php');.*/
                     $course = new core_course_list_element($course);
                 }
                 $imgurl = '';
@@ -111,9 +110,7 @@ class theme_klass_core_course_renderer extends core_course_renderer {
      * @return type|string
      */
     public function frontpage_available_courses() {
-        /* available courses */
-        global $CFG, $OUTPUT;
-        // require_once($CFG->libdir. '/coursecatlib.php');.
+        global $CFG;
         $chelper = new coursecat_helper();
         $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_EXPANDED)->set_courses_display_options(array(
         'recursive' => true,
@@ -131,10 +128,9 @@ class theme_klass_core_course_renderer extends core_course_renderer {
         if ($ccc = get_courses('all', 'c.sortorder ASC', 'c.id, c.shortname, c.visible')) {
             foreach ($courseids as $courseid) {
                 $course = get_course($courseid);
-                $noimgurl = $OUTPUT->image_url('no-image', 'theme');
+                $noimgurl = $this->output->image_url('no-image', 'theme');
                 $courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
                 if ($course instanceof stdClass) {
-                    // require_once($CFG->libdir. '/coursecatlib.php');.
                     $course = new core_course_list_element($course);
                 }
                 $imgurl = '';
@@ -187,7 +183,6 @@ class theme_klass_core_course_renderer extends core_course_renderer {
             return '';
         }
         if ($course instanceof stdClass) {
-            // require_once($CFG->libdir. '/coursecatlib.php');.
             $course = new core_course_list_element($course);
         }
         $content = '';
