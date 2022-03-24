@@ -273,14 +273,14 @@ if (!function_exists('get_logo_url')) {
      * @return image
      */
     function get_logo_url($type = 'header') {
-        global $OUTPUT;
+        global $OUTPUT, $SITE;
         static $theme;
         if ( empty($theme)) {
             $theme = theme_config::load('klass');
         }
         if ($type == "header") {
             $logo = $theme->setting_file_url('logo', 'logo');
-            $logo = empty($logo) ? $OUTPUT->image_url('home/logo', 'theme') : $logo;
+            $logo = empty($logo) ? '' : $logo;
         } else if ($type == "footer") {
             $logo = $theme->setting_file_url('footerlogo', 'footerlogo');
             $logo = empty($logo) ? '' : $logo;

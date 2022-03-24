@@ -93,7 +93,7 @@ if (is_siteadmin()) {
     $name = 'theme_klass/numberofslides';
     $title = get_string('numberofslides', 'theme_klass');
     $description = get_string('numberofslides_desc', 'theme_klass');
-    $default = 3;
+    $default = 1;
     $choices = array(
         1 => '1',
         2 => '2',
