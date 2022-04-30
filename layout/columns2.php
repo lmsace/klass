@@ -115,6 +115,15 @@ switch ($blockarrange) {
     break;
 }
 
+$secondarynavigation = false;
+if (!defined('BEHAT_SITE_RUNNING')) {
+    $buildsecondarynavigation = $PAGE->has_secondary_navigation();
+    if ($buildsecondarynavigation) {
+        $moremenu = new \core\navigation\output\more_menu($PAGE->secondarynav, 'nav-tabs');
+        $secondarynavigation = $moremenu->export_for_template($OUTPUT);
+    }
+}
+
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
@@ -124,6 +133,7 @@ $templatecontext = [
     'navdraweropen' => $navdraweropen,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
+    'secondarymoremenu' => $secondarynavigation,
     "surl" => $surl,
     "s_searchcourses" => $ssearchcourses,
     "s_home" => $shome,
