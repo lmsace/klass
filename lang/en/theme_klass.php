@@ -184,3 +184,5 @@ $string['email'] = "E-mail";
 $string['get_social'] = "Get Social";
 $string['home'] = "Home";
 $string['privacy:metadata'] = 'The klass theme does not store any personal data about any user.';
+$string['loginbg'] = 'Login background image';
+$string['loginbg_desc'] = 'Upload one or more images to display in the login page as faded background carousel';

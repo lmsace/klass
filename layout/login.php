@@ -25,6 +25,9 @@
 defined('MOODLE_INTERNAL') || die();
 $bodyattributes = $OUTPUT->body_attributes();
 require_once($CFG->dirroot . '/theme/klass/layout/includes/themedata.php');
+// Theme - login page background carousel.
+$templatecontext += theme_klass_login_bgcarousel();
+
 
 $templatecontext += [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),

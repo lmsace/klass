@@ -4505,3 +4505,8 @@ table.table-striped thead th a {
     }
 
 }
+
+.klass-login-background {
+    position: absolute;
+    z-index: 0;
+}

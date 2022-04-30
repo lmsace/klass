@@ -41,16 +41,39 @@
 
     {{> theme_klass/header }}
 
-    <div id="page" class="container-fluid mt-0">
-        <div id="page-content" class="row">
-            <div id="region-main-box" class="col-12">
-                <section id="region-main" class="col-12 h-100" aria-label="{{#str}}content{{/str}}">
-                <div class="login-wrapper">
-                    <div class="login-container">
-                    {{{ output.main_content }}}
+    <div class="login-page mt-0">
+        {{#show_slideimages}}
+        <div class="klass-login-background">
+            <div class="carousel-parent-wrapper">
+                <div id="loginCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000">
+                    <ol class="carousel-indicators">
+                        {{#slideimages}}
+                        <li data-target="#loginCarousel" data-slide-to="{{target}}" class="{{^target}}active{{/target}}"></li>
+                        {{/slideimages}}
+
+                    </ol>
+                    <div class="carousel-inner">
+                        {{#slideimages}}
+                        <div class="carousel-item {{^target}}active{{/target}}">
+                            <img class="d-block w-100" src="{{image}}" alt="{{name}}">
+                        </div>
+                        {{/slideimages}}
                     </div>
                 </div>
-                </section>
+            </div>
+        </div>
+        {{/show_slideimages}}
+        <div id="page" class="container-fluid mt-0">
+            <div id="page-content" class="row">
+                <div id="region-main-box" class="col-12">
+                    <section id="region-main" class="col-12 h-100" aria-label="{{#str}}content{{/str}}">
+                    <div class="login-wrapper">
+                        <div class="login-container">
+                        {{{ output.main_content }}}
+                        </div>
+                    </div>
+                    </section>
+                </div>
             </div>
         </div>
     </div>

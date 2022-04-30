@@ -50,8 +50,4 @@ class theme_klass_core_renderer extends theme_boost\output\core_renderer {
         // return $content;
     }
 
-    public function render_primary($data) {
-        return "TEST";
-exit;
-    }
 }

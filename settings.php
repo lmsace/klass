@@ -33,11 +33,21 @@ if (is_siteadmin()) {
     /* Header Settings */
     $temp = new admin_settingpage('theme_klass_header', get_string('generalheading', 'theme_klass'));
 
+    
+
     // Logo file setting.
     $name = 'theme_klass/logo';
     $title = get_string('logo', 'theme_klass');
     $description = get_string('logodesc', 'theme_klass');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Logo file setting.
+    $name = 'theme_klass/loginbg';
+    $title = get_string('loginbg', 'theme_klass');
+    $description = get_string('loginbg_desc', 'theme_klass');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'loginbg', 0, ['maxfiles' => -1]);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 

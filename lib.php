@@ -97,6 +97,8 @@ function theme_klass_pluginfile($course, $cm, $context, $filearea, $args, $force
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
         } else if ($filearea === 'footerlogo') {
             return $theme->setting_file_serve('footerlogo', $args, $forcedownload, $options);
+        } else if ($filearea === 'loginbg') {
+            return $theme->setting_file_serve('loginbg', $args, $forcedownload, $options);
         } else if ($filearea === 'style') {
             theme_klass_serve_css($args[1]);
         } else if ($filearea === 'pagebackground') {
@@ -393,4 +395,39 @@ function theme_klass_lang($key = '') {
     } else {
         return $key;
     }
+}
+
+
+/**
+ * Fetch available login page slider images added on the theme settings.
+ * @return array $slideimage List of images, filename and number.
+ */
+function theme_klass_login_bgcarousel() {
+    global $CFG;
+
+    $slideimages = [];
+    $fs = get_file_storage(); // Create file storage object.
+    $context = context_system::instance();
+    // Get list of stored images on the filearea loginbg.
+    $files = $fs->get_area_files($context->id, 'theme_klass', 'loginbg');
+    if (!empty($files)) {
+        $i = 0;
+        foreach ($files as $key => $file) {
+
+            if ($isimage = $file->is_valid_image()) { // Is valid Image.
+                // Create the file url in moodle pluginfile format.
+                $component = 'theme_klass';
+                $itemid = theme_get_revision();
+                $image['image'] = moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php", "/" . $file->get_contextid() . "/" .
+                    $component . "/" . $file->get_filearea() . "/" . $itemid . $file->get_filepath() . $file->get_filename());
+                $image['name'] = $file->get_filename();
+                $image['target'] = $i; // Generate target number.
+                $slideimages[] = $image;
+                $i++;
+            }
+        }
+    }
+    
+    $show_slideimages = (!empty($slideimages)) ? true : false;
+    return ['slideimages' => $slideimages, 'show_slideimages' => $show_slideimages ];
 }
