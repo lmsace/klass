@@ -41,7 +41,7 @@ $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 // Header content.
-$logourl = get_logo_url();
+$logourl = theme_klass_get_logo_url();
 $surl = new moodle_url('/course/search.php');
 if (! $PAGE->url->compare($surl, URL_MATCH_BASE)) {
     $compare = 1;
@@ -54,7 +54,7 @@ $shome = get_string('home', 'theme_klass');
 
 
 // Footer Content.
-$logourlfooter = get_logo_url('footer');
+$logourlfooter = theme_klass_get_logo_url('footer');
 $footlogo = theme_klass_get_setting('footerlogo');
 
 $footnote = theme_klass_get_setting('footnote', 'format_html');

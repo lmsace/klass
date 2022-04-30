@@ -21,28 +21,34 @@
 
      <div class="container navbar-nav">
 
-        <div data-region="drawer-toggle" class="d-inline-block mr-3">
-            <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left mr-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span>
-            <span aria-hidden="true"> </span>
-            <span aria-hidden="true"> </span>
-            <span aria-hidden="true"> </span>
-            </button>
+        <button class="navbar-toggler aabtn d-block d-md-none px-1 my-1 border-0" data-toggler="drawers" data-action="toggle" data-target="theme_boost-drawers-primary">
+            <span class="navbar-toggler-icon"></span>
+            <span class="sr-only">{{#str}}sidepanel, core{{/str}}</span>
+        </button>
+
+        {{#primarymoremenu}}
+        <div class="primary-navigation">
+            {{> core/moremenu}}
         </div>
+        {{/primarymoremenu}}
 
-
-        <ul class="nav navbar-nav ml-auto">
-            <div class="d-none d-lg-block">
+        <div id="usernavigation" class="navbar-nav ml-auto">
+            {{# output.search_box }}
                 {{{ output.search_box }}}
-            </div>
-              <!-- navbar_plugin_output -->
-            <li class="nav-item">
+                <div class="divider border-left h-75 align-self-center mx-1"></div>
+            {{/output.search_box}}
+            {{#langmenu}}
+                {{> theme_boost/language_menu }}
+                <div class="divider border-left h-75 align-self-center mx-1"></div>
+            {{/langmenu}}
             {{{ output.navbar_plugin_output }}}
-            </li>
-            <!-- user_menu -->
-            <li class="nav-item d-flex align-items-center">
-                {{{ output.user_menu }}}
-            </li>
-        </ul>
+            <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
+                {{#usermenu}}
+                    {{> core/user_menu }}
+                {{/usermenu}}
+            </div>
+            {{{ output.edit_switch }}}
+        </div>
 
        <!-- search_box -->
     </div>

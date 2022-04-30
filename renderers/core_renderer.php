@@ -47,6 +47,11 @@ class theme_klass_core_renderer extends theme_boost\output\core_renderer {
             $context = $item->export_for_template($this);
             $content .= $this->render_from_template('theme_klass/custom_menu_item', $context);
         }
-        return $content;
+        // return $content;
+    }
+
+    public function render_primary($data) {
+        return "TEST";
+exit;
     }
 }

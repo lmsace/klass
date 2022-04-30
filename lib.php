@@ -265,14 +265,15 @@ function theme_klass_pre_css_set_fontwww($css) {
 
 // Logo Image URL Fetch from theme settings.
 // @ return string.
-if (!function_exists('get_logo_url')) {
+if (!function_exists('theme_klass_get_logo_url')) {
+
     /**
-     * get_logo_url description
+     * theme_klass_get_logo_url description
      *
      * @param  string $type
      * @return image
      */
-    function get_logo_url($type = 'header') {
+    function theme_klass_get_logo_url($type = 'header') {
         global $OUTPUT, $SITE;
         static $theme;
         if ( empty($theme)) {

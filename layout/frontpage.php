@@ -15,103 +15,84 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * frontpage.php
+ * A two column layout for the boost theme.
  *
- * @package   theme_klass
- * @copyright 2015 Lmsace Dev Team,lmsace.com
+ * @package   theme_boost
+ * @copyright 2016 Damyon Wiese
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
-// Get the HTML for the settings bits.
-$html = theme_klass_get_html_for_settings($OUTPUT, $PAGE);
+defined('MOODLE_INTERNAL') || die();
 
-if (right_to_left()) {
-    $regionbsid = 'region-bs-main-and-post';
-} else {
-    $regionbsid = 'region-bs-main-and-pre';
+user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
+require_once($CFG->libdir . '/behat/lib.php');
+require_once($CFG->dirroot . '/theme/klass/layout/includes/themedata.php');
+
+// Add block button in editing mode.
+$addblockbutton = $OUTPUT->addblockbutton();
+
+$extraclasses = [];
+$bodyattributes = $OUTPUT->body_attributes($extraclasses);
+$blockshtml = $OUTPUT->blocks('side-pre');
+$hasblocks = (strpos($blockshtml, 'data-block=') !== false || !empty($addblockbutton));
+
+$secondarynavigation = false;
+$overflow = '';
+if ($PAGE->has_secondary_navigation()) {
+    $tablistnav = $PAGE->has_tablist_secondary_navigation();
+    $moremenu = new \core\navigation\output\more_menu($PAGE->secondarynav, 'nav-tabs', true, $tablistnav);
+    $secondarynavigation = $moremenu->export_for_template($OUTPUT);
+    $overflowdata = $PAGE->secondarynav->get_overflow_menu_data();
+    if (!is_null($overflowdata)) {
+        $overflow = $overflowdata->export_for_template($OUTPUT);
+    }
 }
 
-$courserenderer = $PAGE->get_renderer('core', 'course');
+$primary = new core\navigation\output\primary($PAGE);
+$renderer = $PAGE->get_renderer('core');
+$primarymenu = $primary->export_for_template($renderer);
+$buildregionmainsettings = !$PAGE->include_region_main_settings_in_header_actions()  && !$PAGE->has_secondary_navigation();
+// If the settings menu will be included in the header then don't add it here.
+$regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settings_menu() : false;
 
-echo $OUTPUT->doctype() ?>
-<html <?php echo $OUTPUT->htmlattributes(); ?>>
-<head>
-    <title><?php echo $OUTPUT->page_title(); ?></title>
-    <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
-    <?php echo $OUTPUT->standard_head_html() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+$header = $PAGE->activityheader;
+$headercontent = $header->export_for_template($renderer);
 
-<body <?php echo $OUTPUT->body_attributes(); ?>>
-
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
-
-<?php
-require_once(dirname(__FILE__) . '/includes/header.php');
-echo $headerlayout;
-    ?>
-<!--Custom theme header-->
-<div class="">
-    <?php
-        $toggleslideshow = theme_klass_get_setting('toggleslideshow');
-    if ($toggleslideshow == 1) {
-            require_once(dirname(__FILE__) . '/includes/slideshow.php');
+// Slide show contnet
+$data['numberofslides'] = theme_klass_get_setting('numberofslides');
+$visableslide = 0;
+for ($s1 = 1; $s1 <= $data['numberofslides']; $s1++) :
+    $slide['s'] = $s1;
+    $slide['slidecaption'] = theme_klass_get_setting('slide' . $s1 . 'caption', true);
+    $slide['slidedesc'] = theme_klass_get_setting('slide' . $s1 . 'desc', 'format_html');
+    $slide['slideimg'] = theme_klass_render_slideimg($s1, 'slide' . $s1 . 'image');
+    if ($slide['slideimg']) {
+        $visableslide += 1;
+        $slide['clstxt1'] = ($visableslide == "1") ? ' active' : '';
+        $data['slides'][] = $slide;
     }
-    ?>
-</div>
-    <?php
-    $whotitle = theme_klass_get_setting('whoweare_title');
-    $whodesc = theme_klass_get_setting('whoweare_description', 'format_html');
-    if (!empty($whotitle) || !empty($whodesc)) {
-?>
-<!--Custom theme slider-->
-<div class="fp-site-customdesc">
-    <div class="container">
-    <h2><?php echo $whotitle; ?></h2>
-    <?php
-    if ($whodesc) { ?>
-        <p><?php echo $whodesc; ?></p>
-        <?php
-    } ?>
-</div>
-</div>
-    <?php
-    } ?>
-<!--Custom theme Who We Are block-->
-<div id="page" class="container">
-    <header id="page-header" class="clearfix">
-        <?php echo $html->heading; ?>
-        <div id="course-header">
-            <?php echo $OUTPUT->course_header(); ?>
-        </div>
-    </header>
-    <div id="page-content" class="row">
-    <?php
-    if (!empty($OUTPUT->blocks_for_region('side-pre'))) {
-        $class = "col-md-9";
-    } else {
-        $class = "col-md-12";
-    }
-    ?>
-        <div id="<?php echo $regionbsid ?>"  class="<?php echo $class; ?>">
-                    <?php
-                        echo $OUTPUT->course_content_header();
-                        echo $OUTPUT->main_content();
-                        echo $OUTPUT->course_content_footer();
-            ?>
-        </div>
+endfor;
+$data['countslideimage'] = $visableslide;
 
-                <?php echo $OUTPUT->blocks('side-pre', 'col-md-3'); ?>
-    </div>
-    <?php echo (isset($flatnavbar)) ? $flatnavbar : ""; ?>
-</div>
-<?php
-    require_once(dirname(__FILE__) . '/includes/footer.php');
-    echo $footerlayout;
+// End Slide show contnet.
+$templatecontext += $data;
 
-?>
-<!--Custom theme footer-->
+$templatecontext += [
+    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
+    'output' => $OUTPUT,
+    'sidepreblocks' => $blockshtml,
+    'hasblocks' => $hasblocks,
+    'bodyattributes' => $bodyattributes,
+    'primarymoremenu' => $primarymenu['moremenu'],
+    'secondarymoremenu' => $secondarynavigation ?: false,
+    'mobileprimarynav' => $primarymenu['mobileprimarynav'],
+    'usermenu' => $primarymenu['user'],
+    'langmenu' => $primarymenu['lang'],
+    'regionmainsettingsmenu' => $regionmainsettingsmenu,
+    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
+    'headercontent' => $headercontent,
+    'overflow' => $overflow,
+    'addblockbutton' => $addblockbutton,
+];
 
-</body>
-</html>
+echo $OUTPUT->render_from_template('theme_klass/frontpage', $templatecontext);

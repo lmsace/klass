@@ -23,6 +23,7 @@
  *
  */
 namespace theme_klass\privacy;
+
 class provider implements \core_privacy\local\metadata\null_provider {
     /**
      * Returns meta data about this system.
