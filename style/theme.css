@@ -4538,7 +4538,7 @@ table.table-striped thead th a {
 
 
 /*login page*/
-.klass-login-background {
+.klass-login-background .carousel-parent-wrapper {
     width: 100%;
     position: absolute;
     z-index: 0;
@@ -4546,4 +4546,14 @@ table.table-striped thead th a {
 .login-page .login-wrapper .login-container {
     margin: 50px 0;
     border-radius: 10px;
+}
+.login-page .login-wrapper .login-container .loginform .form-group .form-control {
+    max-width: none;
+    padding: 5px 15px;
+}
+.login-container .login-identityproviders .login-identityprovider-btn {
+    width: auto;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px 10px 0;
 }
