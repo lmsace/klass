@@ -204,6 +204,11 @@ h6 {
 }
 #header .nav.navbar-nav .nav-item .nav-link {
     color: var(--white);
+    border-bottom: 0;
+}
+#header .nav.navbar-nav .moremenu .nav-item .nav-link.active:hover,
+#header .nav.navbar-nav .moremenu .nav-item .nav-link.active:focus {
+    background: var(--color_cerulean_approx);
 }
 #header .nav.navbar-nav .simplesearchform .btn-open {
     height: 100%;
@@ -757,10 +762,6 @@ h6 {
 .header-main .header-main-content {
     background: var(--color_cerulean_approx);
 }
-.header-main .header-main-content .navbar-toggleable-md {
-    padding-bottom: 10px;
-    margin-top: 15px;
-}
 .header-main .header-main-content .navbar-toggleable-md .infoarea a.nav-link {
     color: var(--white);
 }
@@ -839,7 +840,7 @@ h6 {
     outline: 0;
 }
 #logo {
-    height: 150px;
+    max-height: 150px;
     float: left;
     padding: 0;
     display: inline-block;
@@ -1583,8 +1584,6 @@ h6 {
 #footer {
     background: var(--white);
     border-top: 5px solid var(--color_cerulean_approx);
-    margin: 30px 0 0;
-    padding: 0 !important;
 }
 #footer .infoarea {
     margin-bottom: 20px;
@@ -1956,10 +1955,6 @@ h6 {
     }
     .header-main .navbar-toggleable-md .infoarea .nav-item {
         display: inline-block;
-    }
-    .header-main .navbar-toggleable-md .infoarea .nav-item a.nav-link {
-        padding: 37px 20px;
-        margin-top: 10px;
     }
     .header-main .navbar-toggler {
         display: none;
@@ -4241,6 +4236,12 @@ button.close:focus,
 .action-menu .dropdown-toggle {
     box-shadow: none;
 }
+.custom-control-input:focus:not(:checked) ~ .custom-control-label:before {
+    border-color: var(--white);
+}
+.custom-control-input:focus ~ .custom-control-label:before {
+    box-shadow: none;
+}
 
 @media (max-width: 600px) {
     #page-header .card .card-body .flex-wrap .d-flex {
@@ -4535,7 +4536,14 @@ table.table-striped thead th a {
 
 }
 
+
+/*login page*/
 .klass-login-background {
+    width: 100%;
     position: absolute;
     z-index: 0;
+}
+.login-page .login-wrapper .login-container {
+    margin: 50px 0;
+    border-radius: 10px;
 }
