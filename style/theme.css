@@ -19,7 +19,7 @@
     --color_monza_approx: #bc0014;
     --color_scooter_approx: #28aae1;
     --color_pomegranate_approx: #f63e28;
-    --color_deep_cerulean_26_approx: rgba(0, 126, 182, .26);
+    --color_deep_cerulean_20_approx: rgba(0, 126, 182, .20);
     --color_viking_approx: #62bee6;
     --color_boston_blue_approx: #3a87ad;
     --color_link_water_approx: #d9edf7;
@@ -626,7 +626,7 @@ select {
 }
 select:focus {
     border-color: var(--color_alto_approx);
-    box-shadow: 0 0 10px 0 var(--color_deep_cerulean_26_approx);
+    box-shadow: 0 0 10px 0 var(--color_deep_cerulean_20_approx);
     outline: 0;
 }
 select[size] {
@@ -646,7 +646,7 @@ textarea {
 }
 textarea:focus {
     border-color: var(--color_alto_approx);
-    box-shadow: 0 0 10px 0 var(--color_deep_cerulean_26_approx);
+    box-shadow: 0 0 10px 0 var(--color_deep_cerulean_20_approx);
     outline: 0;
 }
 input[type="text"],
@@ -687,7 +687,7 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus {
     border-color: var(--color_alto_approx);
-    box-shadow: 0 0 10px 0 var(--color_deep_cerulean_26_approx);
+    box-shadow: 0 0 10px 0 var(--color_deep_cerulean_20_approx);
     outline: 0;
 }
 input[type="text"] + input[type="submit"] {
@@ -705,7 +705,7 @@ input[type="text"] + input[type="submit"] {
 }
 .uneditable-input:focus {
     border-color: var(--color_alto_approx);
-    box-shadow: 0 0 10px 0 var(--color_deep_cerulean_26_approx);
+    box-shadow: 0 0 10px 0 var(--color_deep_cerulean_20_approx);
     outline: 0;
 }
 .btn-primary {
@@ -3054,9 +3054,6 @@ button.closebutton:active {
 .block_myoverview .block-myoverview .searchbar .input-group-append .input-group-text i.icon {
     color: var(--white);
 }
-.block.block_comments  {
-
-}
 .block .dropdown.show > .btn-outline-secondary.dropdown-toggle,
 .block .dropdown .btn.btn-outline-secondary.dropdown-toggle:hover,
 .block .card-body .btn.btn-outline-secondary.dropdown-toggle:hover,
@@ -4470,7 +4467,6 @@ button.closebutton:active {
     font-size: 14px;
     font-weight: normal;
 }
-
 
 @media (min-width: 1200px) {
     .pagelayout-course #page.drawers .main-inner {
