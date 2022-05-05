@@ -4102,12 +4102,12 @@ button.closebutton:active {
 }
 #footer .footer-foot {
     text-align: center;
+    border-top: 1px solid var(--color_cerulean_approx);
+    padding: 6px 0;
 }
 #footer .footer-foot p {
     color: var(--color_mine_shaft_approx);
     line-height: 20px;
-    padding: 6px 0;
-    border-top: 1px solid var(--color_cerulean_approx);
     margin-bottom: 0;
 }
 #footer .footer-foot p span {
@@ -4115,6 +4115,9 @@ button.closebutton:active {
 }
 #footer .footer-foot p a {
     color: var(--color_cerulean_approx);
+}
+#footer .footer-foot .footer-content-debugging .purgecaches a {
+    color: var(--color_mine_shaft_approx);
 }
 #footer .footer-main h5 {
     color: var(--color_fuscous_gray_approx);
