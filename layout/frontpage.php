@@ -17,7 +17,7 @@
 /**
  * A two column layout for the boost theme.
  *
- * @package   theme_boost
+ * @package   theme_klass
  * @copyright 2016 Damyon Wiese
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -58,7 +58,7 @@ $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settin
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
-// Slide show contnet
+// Slide show contnet.
 $data['numberofslides'] = theme_klass_get_setting('numberofslides');
 $visableslide = 0;
 for ($s1 = 1; $s1 <= $data['numberofslides']; $s1++) :

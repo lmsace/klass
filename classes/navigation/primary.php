@@ -27,7 +27,7 @@ use custom_menu;
  * This file combines primary nav, custom menu, lang menu and
  * usermenu into a standardized format for the frontend
  *
- * @package     core
+ * @package     theme_klass
  * @category    navigation
  * @copyright   2021 onwards Peter Dias
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

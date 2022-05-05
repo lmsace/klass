@@ -15,20 +15,19 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package    theme_enlight
+ * define theme installation.
+ * @package    theme_klass
  * @copyright  2015 onwards LMSACE Dev Team (http://www.lmsace.com)
  * @author    LMSACE Dev Team
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
 
 /**
  * Theme_klass install function.
  *
  * @return void
  */
-
 function xmldb_theme_klass_install() {
     global $CFG;
 
@@ -52,3 +51,4 @@ function xmldb_theme_klass_install() {
         $filerecord->filename = 'slide1image.jpg';
         $fs->create_file_from_pathname($filerecord, $CFG->dirroot . '/theme/klass/pix/home/slide1.jpg');
 }
+

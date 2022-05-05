@@ -40,7 +40,8 @@ class theme_klass_core_course_renderer extends core_course_renderer {
         /* New Courses */
         global $CFG;
         $newcourse = get_string('newcourses', 'theme_klass');
-        $header = '<div id="frontpage-course-list"><h2>'.$newcourse.'</h2><div class="courses frontpage-course-list-all"><div class="row">'; $footer = '</div></div></div>';
+        $header = '<div id="frontpage-course-list"><h2>'.$newcourse.'</h2><div class="courses frontpage-course-list-all">
+        <div class="row">'; $footer = '</div></div></div>';
         $cocnt = 1;
         $content = '';
         if ($ccc = get_courses('all', 'c.id DESC, c.sortorder ASC', 'c.id, c.shortname, c.visible')) {
@@ -76,7 +77,11 @@ class theme_klass_core_course_renderer extends core_course_renderer {
                 if (right_to_left()) {
                     $icon = "fa-angle-double-left";
                 }
-                $content .= '<div class="col-md-3"><div class="fp-coursebox"><div class="fp-coursethumb"><a href="'.$courseurl.'"><img src="'.$imgurl.'" width="243" height="165" alt=""></a></div><div class="fp-courseinfo"><h5><a href="'.$courseurl.'">'.$course->get_formatted_name().'</a></h5><div class="readmore"><a href="'.$courseurl.'">'.get_string("readmore", "theme_klass").'<i class="fa '.$icon.'"></i></a></div></div></div></div>';
+                $content .= '<div class="col-md-3"><div class="fp-coursebox"><div class="fp-coursethumb">
+                <a href="'.$courseurl.'"><img src="'.$imgurl.'" width="243" height="165" alt=""></a></div>
+                <div class="fp-courseinfo"><h5><a href="'.$courseurl.'">'.$course->get_formatted_name().'</a></h5>
+                <div class="readmore"><a href="'.$courseurl.'">'.get_string("readmore", "theme_klass").
+                '<i class="fa '.$icon.'"></i></a></div></div></div></div>';
                 if ( ( $cocnt % 4) == "0") {
                     $content .= '<div class="clearfix hidexs"></div>';
                 }
@@ -122,7 +127,9 @@ class theme_klass_core_course_renderer extends core_course_renderer {
         $totalcount = core_course_category::get(0)->get_courses_count($chelper->get_courses_display_options());
         $courseids = array_keys($courses);
         $newcourse = get_string('availablecourses');
-        $header = '<div id="frontpage-course-list"><h2>'.$newcourse.'</h2><div class="courses frontpage-course-list-all"><div class="row">'; $footer = '</div></div></div>';
+        $header = '<div id="frontpage-course-list"><h2>'.$newcourse.'</h2>
+        <div class="courses frontpage-course-list-all"><div class="row">';
+        $footer = '</div></div></div>';
         $cocnt = 1;
         $content = '';
         if ($ccc = get_courses('all', 'c.sortorder ASC', 'c.id, c.shortname, c.visible')) {
@@ -151,7 +158,11 @@ class theme_klass_core_course_renderer extends core_course_renderer {
                 if (right_to_left()) {
                     $icon = "fa-angle-double-left";
                 }
-                $content .= '<div class="col-md-3"><div class="fp-coursebox"><div class="fp-coursethumb"><a href="'.$courseurl.'"><img src="'.$imgurl.'" width="243" height="165" alt=""></a></div><div class="fp-courseinfo"><h5><a href="'.$courseurl.'">'.$course->get_formatted_name().'</a></h5><div class="readmore"><a href="'.$courseurl.'">'.get_string("readmore", "theme_klass").'&nbsp; <i class="fa '.$icon.'"></i></a></div></div></div></div>';
+                $content .= '<div class="col-md-3"><div class="fp-coursebox"><div class="fp-coursethumb">
+                <a href="'.$courseurl.'"><img src="'.$imgurl.'" width="243" height="165" alt=""></a></div>
+                <div class="fp-courseinfo"><h5><a href="'.$courseurl.'">'.$course->get_formatted_name().'</a>
+                </h5><div class="readmore"><a href="'.$courseurl.'">'.get_string("readmore", "theme_klass").
+                '&nbsp; <i class="fa '.$icon.'"></i></a></div></div></div></div>';
                 if (($cocnt % 4) == "0") {
                     $content .= '<div class="clearfix hidexs"></div>';
                 }
@@ -207,8 +218,8 @@ class theme_klass_core_course_renderer extends core_course_renderer {
         $content .= html_writer::start_tag('div', array('class' => 'info'));
         // Course name.
         $coursename = $chelper->get_course_formatted_name($course);
-        $coursenamelink = html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)),
-                                            $coursename, array('class' => $course->visible ? '' : 'dimmed'));
+        $coursenamelink = html_writer::link(new moodle_url('/course/view.php',
+        array('id' => $course->id)), $coursename, array('class' => $course->visible ? '' : 'dimmed'));
         $content .= html_writer::tag($nametag, $coursenamelink, array('class' => 'coursename'));
         // If we display course in collapsed form but the course has summary or course contacts, display the link to the info page.
         $content .= html_writer::start_tag('div', array('class' => 'moreinfo'));

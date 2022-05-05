@@ -1,4 +1,28 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Theme config data
+ *
+ * @package     theme_klass
+ * @copyright   2015 LMSACE Dev Team,lmsace.com
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+defined('MOODLE_INTERNAL') || die();
 
 $custom = $OUTPUT->custom_menu();
 
@@ -23,12 +47,6 @@ $phoneno  = theme_klass_get_setting('phoneno');
 $copyrightfooter = theme_klass_get_setting('copyright_footer');
 $infolink = theme_klass_get_setting('infolink');
 $infolink = theme_klass_infolink();
-
-/* $sinfo = get_string('info', 'theme_klass');
-$scontactus = get_string('contact_us', 'theme_klass');
-$sphone = get_string('phone', 'theme_klass');
-$semail = get_string('email', 'theme_klass');
-$sgetsocial = get_string('get_social', 'theme_klass'); */
 
 $socialurl = ($fburl != '' || $pinurl != '' || $twurl != '' || $gpurl != '') ? 1 : 0;
 $contact = ($emailid != '' || $address != '' || $phoneno != '') ? 1 : 0;
@@ -65,7 +83,7 @@ switch ($blockarrange) {
 }
 
 $templatecontext = [
-    "logourl" => $logourl,    
+    "logourl" => $logourl,
     "logourl_footer" => $logourlfooter,
     "footnote" => $footnote,
     "fburl" => $fburl,
@@ -77,13 +95,6 @@ $templatecontext = [
     "phoneno" => $phoneno,
     "copyright_footer" => $copyrightfooter,
     "infolink" => $infolink,
-    /* "s_info" => $sinfo,
-    "s_contact_us" => $scontactus,
-    "s_phone" => $sphone,
-    "s_email" => $semail,
-    "s_get_social" => $sgetsocial,
-    "s_searchcourses" => $ssearchcourses,
-    "s_home" => $shome, */
     "socialurl" => $socialurl,
     "contact" => $contact,
     "footerall" => $footerall,

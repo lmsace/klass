@@ -22,7 +22,7 @@
  * @author    LMSACE Dev Team
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-defined('MOODLE_INTERNAL') || die();
+
 /**
  * Klass theme core renderer class
  * @copyright  2015 onwards LMSACE Dev Team (http://www.lmsace.com)
@@ -47,7 +47,6 @@ class theme_klass_core_renderer extends theme_boost\output\core_renderer {
             $context = $item->export_for_template($this);
             $content .= $this->render_from_template('theme_klass/custom_menu_item', $context);
         }
-        // return $content;
     }
 
 }

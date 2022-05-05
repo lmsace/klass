@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 $numberofslides = theme_klass_get_setting('numberofslides');
 $slideimage = array();
 for ($s1 = 1; $s1 <= $numberofslides; $s1++) {
-    $slideimage [] = theme_klass_render_slideimg($s1, 'slide' . $s1 . 'image');
+    $slideimage[] = theme_klass_render_slideimg($s1, 'slide' . $s1 . 'image');
 }
 $slideimage = (array_filter($slideimage, function($value) {
 
@@ -117,7 +117,7 @@ if ($countslideimage > 0) {
                   <a class="left carousel-control carousel-control-prev" href="#home-page-carousel" data-slide="prev"></a>
                   <a class="right carousel-control carousel-control-next" href="#home-page-carousel" data-slide="next"></a>
                 </div>
-                <?php
+                    <?php
                 }
                 ?>
 

@@ -22,7 +22,6 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
 
 /**
  * Load the Jquery and migration files
@@ -382,6 +381,11 @@ function theme_klass_infolink() {
     return $content;
 }
 
+/**
+ * Get theme strings.
+ * @param string $key
+ * @return string
+ */
 function theme_klass_lang($key = '') {
     $pos = strpos($key, 'lang:');
     if ($pos !== false) {
@@ -427,7 +431,6 @@ function theme_klass_login_bgcarousel() {
             }
         }
     }
-    
-    $show_slideimages = (!empty($slideimages)) ? true : false;
-    return ['slideimages' => $slideimages, 'show_slideimages' => $show_slideimages ];
+    $showslideimages = (!empty($slideimages)) ? true : false;
+    return ['slideimages' => $slideimages, 'show_slideimages' => $showslideimages ];
 }

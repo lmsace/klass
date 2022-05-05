@@ -33,8 +33,6 @@ if (is_siteadmin()) {
     /* Header Settings */
     $temp = new admin_settingpage('theme_klass_header', get_string('generalheading', 'theme_klass'));
 
-    
-
     // Logo file setting.
     $name = 'theme_klass/logo';
     $title = get_string('logo', 'theme_klass');
