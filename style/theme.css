@@ -13,7 +13,7 @@
     --color_mercury_approx: #e6e6e6;
     --color_black_haze_approx: #f7f7f7;
     --white: #fff;
-    --color_thunderbird_approx: #c02424;   
+    --color_thunderbird_approx: #c02424;
     --color_mandy_approx: #dc4a58;
     --color_danube_approx: #5a7ec9;
     --color_monza_approx: #bc0014;
@@ -62,7 +62,7 @@ h6 {
 }
 *,
 *:focus,
-*:active  {
+*:active {
     outline: none;
 }
 p:empty {
@@ -163,11 +163,6 @@ i.icon :before {
 .btn-link:hover {
     color: var(--white);
 }
-/* .btn.btn-link:hover i:before,
-.btn.btn-link:focus i:before,
-.btn.btn-link:active i:before {
-    color: var(--white);
-} */
 a {
     color: var(--color_cerulean_approx);
 }
@@ -422,8 +417,6 @@ form#movecourses table tbody > tr:nth-child(2n + 1) > th,
 }
 .path-grade-report .gradeparent table {
     width: 100%;
-}
-.path-grade-report-grader {
 }
 .userenrolment th {
     background: var(--color_cerulean_approx);
@@ -1014,7 +1007,7 @@ table.generalbox tbody tr td {
 .nav-pills .show > .nav-link {
     background: var(--color_cerulean_approx);
 }
-.custom-control-input:checked~.custom-control-label:before {
+.custom-control-input:checked ~ .custom-control-label:before {
     background: var(--color_cerulean_approx);
     border-color: var(--color_cerulean_approx);
 }
@@ -1325,8 +1318,8 @@ body.limitedwidth #page.drawers .main-inner,
 .generaltable thead th img {
     background: var(--white);
 }
-[role="treeitem"][aria-expanded="true"].focus>*:first-child,
-[role="treeitem"][aria-expanded="true"]:focus>*:first-child {
+[role="treeitem"][aria-expanded="true"].focus > *:first-child,
+[role="treeitem"][aria-expanded="true"]:focus > *:first-child {
     box-shadow: none;
 }
 #page-enrol-manual-manage .generaltable tbody > tr:nth-child(2n + 1) > td:first-child {
@@ -2398,7 +2391,7 @@ button.closebutton:active {
     color: var(--white);
 }
 #header .navbar-nav .editmode-switch-form .input-group label {
-    color: var(--white)!important;
+    color: var(--white) !important;
 }
 #header .navbar-nav button i.fa-bars {
     display: none;
@@ -2703,15 +2696,19 @@ button.closebutton:active {
 .header-main .message-app .body-container .nav .nav-item a.nav-link.active {
     background: var(--color_allports_approx);
 }
-.header-main .message-app .body-container .custom-control.custom-radio .custom-control-input:checked + .custom-control-label:before,
-.header-main .message-app .body-container .custom-control.custom-switch .custom-control-input:checked + .custom-control-label:before {
+.header-main .message-app .body-container .custom-control.custom-radio
+.custom-control-input:checked + .custom-control-label:before,
+.header-main .message-app .body-container .custom-control.custom-switch
+.custom-control-input:checked + .custom-control-label:before {
     background-color: var(--color_cerulean_approx);
     border-color: var(--color_cerulean_approx);
 }
-.header-main .message-app .body-container .custom-control.custom-radio .custom-control-input:active ~ .custom-control-label:before {
+.header-main .message-app .body-container .custom-control.custom-radio
+.custom-control-input:active ~ .custom-control-label:before {
     background-color: rgba(0, 115, 165, .25);
 }
-.header-main .message-app .body-container .custom-control.custom-radio .custom-control-input:checked:focus ~ .custom-control-label:before {
+.header-main .message-app .body-container .custom-control.custom-radio
+.custom-control-input:checked:focus ~ .custom-control-label:before {
     background-color: var(--color_cerulean_approx);
     box-shadow: 0 0 0 1px var(--white), 0 0 0 0.2rem rgba(0, 115, 165, .25);
 }
@@ -4422,7 +4419,7 @@ button.closebutton:active {
 .drawers .secondary-navigation .moremenu {
     border: 0;
 }
-.moremenu .nav-link[data-toggle="tab"]::after {
+.moremenu .nav-link[data-toggle="tab"]:after {
     display: none;
 }
 .main-inner .drawer-left-toggle button,
@@ -4451,7 +4448,7 @@ button.closebutton:active {
     transform: none !important;
 }
 .drawer .drawercontent .courseindex .courseindex-section .courseindex-sectioncontent .courseindex-item.pageitem {
-    background: var(--color_cerulean_approx);    
+    background: var(--color_cerulean_approx);
 }
 .drawer .drawercontent .list-group a:hover,
 .drawer .drawercontent .list-group a:focus {
