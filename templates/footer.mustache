@@ -1,7 +1,7 @@
 {{#footerall}}
 <footer id="page-footer" class="py-1 bg-inverse">
     <div id="footer">
-    <div class="footer-main">
+        <div class="footer-main">
             <div class="container-fluid">
                 <div class="row">
                 {{#block1}}
@@ -134,6 +134,14 @@
     </div>
 </footer>
 {{/footerall}}
+
+{{#js}}
+M.util.js_pending('theme_boost/loader');
+require(['theme_boost/loader', 'theme_boost/drawer'], function(Loader, Drawer) {
+    Drawer.init();
+    M.util.js_complete('theme_boost/loader');
+});
+{{/js}}
 
 {{#js}}
 require(['theme_boost/footer-popover'], function(FooterPopover) {
