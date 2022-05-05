@@ -4527,10 +4527,12 @@ button.closebutton:active {
     }
     .moremenu .more-nav .nav-item {
         width: 100%;
+        margin-right: 2px;
     }
     .moremenu .nav.nav-tabs > .nav-item .nav-link {
         line-height: 40px;
         text-align: center;
+        background: var(--color_black_haze_approx);
         display: block;
     }
     .moremenu .nav.nav-tabs > .nav-item .nav-link.active {
