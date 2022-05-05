@@ -33,6 +33,7 @@ $templatecontext += [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
     'bodyattributes' => $bodyattributes,
+    'pagetypelogin' => true
 ];
 
 echo $OUTPUT->render_from_template('theme_klass/login', $templatecontext);
