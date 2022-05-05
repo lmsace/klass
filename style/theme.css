@@ -65,6 +65,9 @@ h6 {
 *:active  {
     outline: none;
 }
+p:empty {
+    display: none;
+}
 .aabtn.focus,
 .btn-link.focus,
 .nav-link.focus,
@@ -2722,6 +2725,12 @@ button.closebutton:active {
     box-shadow: 0 0 0 1px var(--white), 0 0 0 0.2rem rgba(0, 115, 165, .25);
 }
 
+@media (max-width: 991px) {
+    .header-main .navbar .navbar-inner button.navbar-toggler {
+        margin-top: 20px;
+    }
+}
+
 /*Header main RTL*/
 .dir-rtl .header-main .header-main-content .top-search {
     padding: 0 0 0 38px;
@@ -2804,6 +2813,7 @@ button.closebutton:active {
     }
     .header-main .navbar .navbar-inner .navbar-toggleable-md .dropdown-menu {
         width: 100%;
+        border-radius: 0;
         position: static;
     }
     .header-main .navbar .navbar-inner {
@@ -2866,7 +2876,7 @@ button.closebutton:active {
     font-weight: normal;
     font-size: 22px;
     color: var(--color_cerulean_approx);
-    line-height: 1.1818181818;
+    line-height: 1.15;
     margin-bottom: 3px;
 }
 .forumpost .content p {
@@ -2875,6 +2885,9 @@ button.closebutton:active {
 }
 .forumpost .content .posting.fullpost {
     margin: 5px 0;
+}
+.forumpost .row .d-flex h3 {
+    margin-bottom: 15px !important;
 }
 .forumpost .row .topic .author {
     color: var(--color_gray_approx);
@@ -3478,6 +3491,8 @@ button.closebutton:active {
 }
 .course_category_tree .category > .info > .categoryname {
     font-size: 16px;
+    background-position: left center;
+    background-repeat: no-repeat;
     padding: 5px 18px 5px 27px;
 }
 .course_category_tree .category > .info > .categoryname > a {
@@ -3744,7 +3759,8 @@ button.closebutton:active {
     .coursebox .content .coursecat {
         padding: 0 0 0 110px;
     }
-    .coursebox .content .teachers {
+    .coursebox .content .teachers,
+    .coursebox .content .courseimage + div .teachers {
         padding-left: 0;
         margin-left: 170px;
     }
@@ -3782,13 +3798,16 @@ button.closebutton:active {
     .dir-rtl .coursebox .content .coursecat {
         padding: 0 170px 0 0;
     }
-    .dir-rtl .coursebox .content .teachers {
+    .coursebox .content .courseimage + div > .teachers {
         padding-right: 170px;
         padding-left: 0;
     }
 }
 
 @media (max-width: 575px) {
+    .coursebox > .info > .coursename a {
+        padding-right: 10px;
+    }
     .coursebox .content .courseimage + div >.summary {
         margin-top: 120px;
     }
@@ -3798,6 +3817,9 @@ button.closebutton:active {
     .dir-rtl .category-listing .listitem .category-item-actions .menubar .dropdown .dropdown-menu {
         left: auto;
         right: auto;
+    }
+    .dir-rtl .coursebox > .info > .coursename a {
+        padding-left: 10px;
     }
 }
 
@@ -3836,8 +3858,9 @@ button.closebutton:active {
     float: none;
 }
 .dir-rtl .course_category_tree .category > .info > .categoryname {
+    background-position: right center;
     padding: 5px 27px 5px 18px;
-    margin: 0 20px 0 0;
+    margin: 0;
 }
 .dir-rtl .courses .coursebox:hover {
     background: var(--white);
@@ -4104,6 +4127,13 @@ button.closebutton:active {
     text-align: center;
     border-top: 1px solid var(--color_cerulean_approx);
     padding: 6px 0;
+}
+#footer .footer-content-popover .footer-section a {
+    color: var(--color_cerulean_approx);
+}
+#footer .footer-content-popover .footer-section a:hover,
+#footer .footer-content-popover .footer-section a:focus {
+    color: var(--color_thunderbird_approx);
 }
 #footer .footer-foot p {
     color: var(--color_mine_shaft_approx);
