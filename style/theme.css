@@ -3805,7 +3805,7 @@ button.closebutton:active {
     .coursebox > .info > .coursename a {
         padding-right: 10px;
     }
-    .coursebox .content .courseimage + div >.summary {
+    .coursebox .content .courseimage + div > .summary {
         margin-top: 120px;
     }
     .category-listing .listitem .category-item-actions .menubar .dropdown .dropdown-menu {
