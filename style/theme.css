@@ -155,7 +155,6 @@ a:not([class]):focus,
 i.icon {
     margin-right: 0;
     font-size: 16px;
-    color: var(--color_cerulean_approx);
 }
 i.icon :before {
     font-size: 16px;
@@ -245,6 +244,12 @@ input[type="checkbox"] + label {
     background: var(--color_allports_approx);
     box-shadow: none;
     outline: 0;
+}
+.moremenu .dropdown-item[aria-current="true"]:focus-within,
+.moremenu .dropdown-item[aria-current="true"]:hover,
+.moremenu .dropdown-item.active:focus-within,
+.moremenu .dropdown-item.active:hover {
+    background: var(--color_cerulean_approx);
 }
 .path-admin .buttons {
     background: none;
@@ -796,6 +801,9 @@ input[type="reset"] {
     text-transform: uppercase;
     text-shadow: none;
     vertical-align: top;
+}
+input[type="submit"] {
+    height: auto;
 }
 button:hover,
 button:focus,
@@ -1540,8 +1548,9 @@ body.limitedwidth #page.drawers .main-inner,
 .list-group-item.active i.icon {
     color: var(--white);
 }
-.tab-content .tab-pane .list-group .list-group-item a.btn {
-    color: var(--white) !important;
+.tab-content .tab-pane .list-group .list-group-item a.btn:hover,
+.tab-content .tab-pane .list-group .list-group-item a.btn:focus {
+    border-color: var(--color_allports_approx);
 }
 .listitem .action-menu .dropdown-toggle {
     margin: 0 5px;
@@ -4454,6 +4463,14 @@ button.closebutton:active {
 }
 .drawer .drawercontent .block-region .block .card-body .card-text {
     padding: 10px 15px 15px;
+}
+.drawer .drawercontent .block-region .block .card-body .card-text .badges {
+    padding: 0;
+}
+.drawer .drawercontent .block-region .block .card-body .card-text .badges li {
+    max-width: 100px;
+    width: auto;
+    margin-right: 10px;
 }
 .drawer .drawercontent .maincalendar .header .cal_courses_flt {
     max-width: 120px;
