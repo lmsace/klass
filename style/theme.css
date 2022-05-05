@@ -2177,6 +2177,12 @@ button.closebutton:active {
 .drawer-toggles .drawer-toggler .btn:focus {
     box-shadow: none;
 }
+.drawers .secondary-navigation .moremenu {
+    border: 0;
+}
+/*.drawers .secondary-navigation .moremenu.navigation .nav-tabs .nav-link.active {
+    color: var(--white);
+}*/
 
 @media (min-width: 768px) {
     .pagelayout-standard #page.drawers .main-inner,
@@ -2197,6 +2203,9 @@ button.closebutton:active {
 #header .nav.navbar-nav .nav-item .nav-link {
     color: var(--white);
     border-bottom: 0;
+}
+#header .nav.navbar-nav .nav-item .nav-link:focus {
+    background: var(--color_cerulean_approx);
 }
 #header .nav.navbar-nav .nav-item .nav-link.active {
     color: var(--color_cerulean_approx);
@@ -2221,6 +2230,22 @@ button.closebutton:active {
 }
 #header .nav.navbar-nav .search-input-wrapper > div i.icon {
     color: var(--white);
+}
+#header .navbar-nav .langmenu .dropdown .dropdown-toggle,
+#header .navbar-nav .langmenu .dropdown .dropdown-toggle .icon {
+    color: var(--white);
+}
+#header .navbar-nav .langmenu .dropdown .dropdown-toggle .caret {
+    display: none;
+}
+#header .navbar-toggler:before {
+    content: '\f0c9';
+    font-size: 24px;
+    font-family: var(--font_2);
+    color: var(--white);
+}
+#header .navbar-toggler span {
+    display: none;
 }
 #header .popover-region {
     float: left;
@@ -2301,22 +2326,6 @@ button.closebutton:active {
     height: 100%;
     display: inline-flex;
     align-items: center;
-}
-.usermenu .login {
-    font-size: 12px;
-    color: var(--white);
-    line-height: 20px;
-    padding: 7px 0;
-    display: inline-block;
-}
-.usermenu .login a {
-    color: var(--white);
-    text-decoration: underline;
-}
-.usermenu .login a:hover,
-.usermenu .login a:focus {
-    color: var(--white);
-    text-decoration: none;
 }
 .usermenu .moodle-actionmenu .toggle-display {
     height: auto;
