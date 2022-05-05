@@ -1361,6 +1361,7 @@ body.limitedwidth #page.drawers .main-inner,
     box-sizing: border-box;
 }
 .fp-viewbar.btn-group .btn.btn-secondary {
+    color: var(--color_fuscous_gray_approx);
     background: none;
     border: 1px solid var(--color_mercury_approx);
 }
@@ -1648,6 +1649,9 @@ button.closebutton:active {
 .page-context-header .header-button-group a:focus {
     color: var(--color_thunderbird_approx);
 }
+#page-admin-setting-themesettingklass .settingsform .row button {
+    height: auto;
+}
 
 @media (min-width: 1200px) {
     .dir-rtl .form-item .form-setting,
@@ -1724,6 +1728,9 @@ button.closebutton:active {
 }
 
 @media (max-width: 991px) {
+    #page-admin-setting-themesettingklass #region-main {
+        overflow: hidden;
+    }
     body #region-main .mform:not(.unresponsive) .fitem_fcheckbox .felement {
         padding-top: 0;
     }
@@ -1895,6 +1902,13 @@ button.closebutton:active {
     #page-admin-setting-themesettingklass #page form .settingsform div:last-child .offset-sm-3.col-sm-3 {
         max-width: none;
         flex: auto;
+    }
+    #page-admin-setting-themesettingklass #page form .settingsform .nav-tabs:not(.more-nav) .nav-link {
+        background: none;
+    }
+    #page-admin-setting-themesettingklass #page form .settingsform .nav-tabs:not(.more-nav) .nav-link.active {
+        color: var(--color_cerulean_approx);
+        background: var(--color_black_haze_approx);
     }
     .nav-tabs .nav-link.active:not(:disabled):not(.disabled):active,
     .nav-tabs .nav-link.active:not(:disabled):not(.disabled).active,
@@ -2327,7 +2341,7 @@ button.closebutton:active {
     max-height: 150px;
     height: 100%;
     float: left;
-    padding: 0;
+    padding: 10px 0;
 }
 #logo .navbar-brand {
     height: 100%;
@@ -4055,7 +4069,8 @@ button.closebutton:active {
     margin-bottom: 20px;
 }
 #footer .infoarea .footer-logo {
-    max-width: 200px;
+    max-width: 150px;
+    height: 150px;
     margin: 10px 0;
 }
 #footer .infoarea .footer-logo a {
@@ -4539,20 +4554,25 @@ button.closebutton:active {
     .moremenu {
         height: auto;
     }
-    .moremenu .more-nav {
+    /*.moremenu .more-nav {
         flex-wrap: nowrap;
     }
     .moremenu .more-nav .nav-item {
         width: 100%;
         margin-right: 2px;
     }
-    .moremenu .nav.nav-tabs > .nav-item .nav-link {
+     .moremenu .nav.nav-tabs > .nav-item .nav-link {
         line-height: 40px;
         text-align: center;
         background: var(--color_black_haze_approx);
         display: block;
+    } */
+    .secondary-navigation .navigation .nav-tabs li.nav-item {
+        display: inline-block;
+        margin: 0 30px;
     }
     .moremenu .nav.nav-tabs > .nav-item .nav-link.active {
+        color: var(--color_allports_approx);
         border-color: var(--color_allports_approx);
     }
     .moremenu .nav.nav-tabs > .nav-item .nav-link:before {
@@ -4577,11 +4597,23 @@ button.closebutton:active {
     .moremenu .nav.nav-tabs > .nav-item .nav-link[href="#linkmodules"]:before {
         content: '\f1b3';
     }
+    .moremenu .nav.nav-tabs > .nav-item .nav-link[href="#linkappearance"]:before {
+        content: '\f200';
+    }
+    .moremenu .nav.nav-tabs > .nav-item .nav-link[href="#linkserver"]:before {
+        content: '\f1c0';
+    }
+    .moremenu .nav.nav-tabs > .nav-item .nav-link[href="#linkreports"]:before {
+        content: '\f0f6';
+    }
+    .moremenu .nav.nav-tabs > .nav-item .nav-link[href="#linkdevelopment"]:before {
+        content: '\f013';
+    }
 }
 
 @media (max-width: 767px) {
     #page-admin-search .moremenu {
-        margin-bottom: 50px;
+        margin: 20px 0;
     }
     .moremenu .nav.nav-tabs > .nav-item .nav-link.active {
         color: var(--white);

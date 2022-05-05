@@ -158,7 +158,7 @@ class theme_klass_core_course_renderer extends core_course_renderer {
                 if (right_to_left()) {
                     $icon = "fa-angle-double-left";
                 }
-                $content .= '<div class="col-md-3"><div class="fp-coursebox"><div class="fp-coursethumb">
+                $content .= '<div class="col-lg-3 col-md-4"><div class="fp-coursebox"><div class="fp-coursethumb">
                 <a href="'.$courseurl.'"><img src="'.$imgurl.'" width="243" height="165" alt=""></a></div>
                 <div class="fp-courseinfo"><h5><a href="'.$courseurl.'">'.$course->get_formatted_name().'</a>
                 </h5><div class="readmore"><a href="'.$courseurl.'">'.get_string("readmore", "theme_klass").
