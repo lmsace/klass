@@ -60,7 +60,13 @@
     {{> theme_klass/header }}
 
     {{> theme_klass/slideshow }}
-    
+
+    <div class="fp-site-customdesc">
+        <div class="container">
+            {{#whotitle}}<h2>{{{whotitle}}}</h2>{{/whotitle}}
+            {{#whodesc}}<p>{{{whodesc}}}</p>{{/whodesc}}
+        </div>
+    </div>
     {{#courseindex}}
         {{< theme_boost/drawer }}
             {{$id}}theme_boost-drawers-courseindex{{/id}}

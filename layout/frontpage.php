@@ -76,6 +76,8 @@ $data['countslideimage'] = $visableslide;
 
 // End Slide show contnet.
 $templatecontext += $data;
+$whotitle = theme_klass_get_setting('whoweare_title');
+$whodesc = theme_klass_get_setting('whoweare_description', 'format_html');
 
 $templatecontext += [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
@@ -93,6 +95,8 @@ $templatecontext += [
     'headercontent' => $headercontent,
     'overflow' => $overflow,
     'addblockbutton' => $addblockbutton,
+    'whotitle' => $whotitle,
+    'whodesc' => $whodesc
 ];
 
 echo $OUTPUT->render_from_template('theme_klass/frontpage', $templatecontext);
