@@ -1244,9 +1244,6 @@ button.close:focus,
 .action-menu .dropdown-toggle {
     box-shadow: none;
 }
-.custom-control-input:focus:not(:checked) ~ .custom-control-label:before {
-    border-color: var(--white);
-}
 .custom-control-input:focus ~ .custom-control-label:before {
     box-shadow: none;
 }
@@ -2307,9 +2304,6 @@ button.closebutton:active {
     padding: 0;
     box-shadow: none;
 }
-#header .simplesearchform {
-    height: 100%;
-}
 #header .simplesearchform .input-group {
     margin: 0 auto;
 }
@@ -2743,6 +2737,25 @@ button.closebutton:active {
 }
 .header-main .message-app .body-container .switch input:checked:focus + label:before {
     box-shadow: 0 0 0 1px var(--white), 0 0 0 0.2rem rgba(0, 115, 165, .25);
+}
+.message-app .list-group .list-group-item.list-group-item-action:hover {
+    background: var(--color_cerulean_approx);
+}
+.message-app .list-group .list-group-item.list-group-item-action:hover > .d-flex .d-flex .text-muted i.icon {
+    color: var(--white);
+}
+.message-app .btn-link:hover,
+.message-app .btn-link:focus {
+    color: var(--color_log_cabin_approx);
+}
+.message-app .btn-link:active {
+    color: var(--white);
+}
+.custom-switch .custom-control-input:focus .custom-control-label:before {
+    border-color: var(--white);
+}
+.custom-switch .custom-control-label:before {
+    border-color: var(--color_cerulean_approx);
 }
 
 @media (max-width: 991px) {
