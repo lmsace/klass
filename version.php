@@ -29,5 +29,5 @@ $plugin->release = 'v4.0'; // This version's release version.
 $plugin->requires  = 2022041900; // This version's moodle require release.
 $plugin->component = 'theme_klass'; // This component type_name.
 $plugin->dependencies = array(
-    'theme_boost'  => 2022041900, // This version's depended the component and its require release.
+    'theme_boost'  => 2022041900, // This version depended the component and its require release.
 );
