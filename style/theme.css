@@ -4509,7 +4509,7 @@ button.closebutton:active {
     margin-bottom: 10px;
 }
 .drawer .drawercontent .maincalendar .calendarmonth {
-     width: 100%;
+    width: 100%;
 }
 .drawer .drawercontent .maincalendar .calendarmonth .header span {
     font-size: 14px;
