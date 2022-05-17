@@ -296,6 +296,9 @@ div.backup-section + form {
 .no-overflow > .generaltable {
     margin-bottom: 20px;
 }
+#region-main {
+    padding: 0 15px;
+}
 .path-mod-wiki #region-main .form-check .form-check-input {
     margin: 0.3rem 0 0 -1.25rem;
 }
@@ -1253,6 +1256,7 @@ button.close:focus,
 .pagelayout-standard #page.drawers .main-inner,
 body.limitedwidth #page.drawers .main-inner,
 #page.drawers {
+    padding: 0;
     margin-top: 0;
 }
 .paging {
@@ -1648,6 +1652,9 @@ button.closebutton:active {
 }
 #page-admin-setting-themesettingklass .settingsform .row button {
     height: auto;
+}
+#page.drawers div[role="main"] {
+    padding: 0;
 }
 
 @media (min-width: 1200px) {
