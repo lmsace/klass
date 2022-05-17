@@ -4202,6 +4202,10 @@ button.closebutton:active {
 #footer .social-media ul li:last-child {
     margin-right: 0;
 }
+.footer-container-popover .btn-footer-popover {
+    color: var(--white);
+    background: var(--color_allports_approx) !important;
+}
 
 /*Footer RTL*/
 .dir-rtl #footer .contact-info p i {
