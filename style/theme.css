@@ -3052,7 +3052,7 @@ button.closebutton:active {
     text-transform: none;
 }
 .drawer.drawer-right {
-    z-index: 1;
+    z-index: 1050;
 }
 .drawers .block_myoverview {
     border: 1px solid var(--color_alto_approx);
