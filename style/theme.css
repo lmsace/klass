@@ -296,7 +296,8 @@ div.backup-section + form {
 .no-overflow > .generaltable {
     margin-bottom: 20px;
 }
-#region-main {
+#region-main,
+.pagelayout-mydashboard #region-main {
     padding: 0 15px;
 }
 .path-mod-wiki #region-main .form-check .form-check-input {
@@ -4202,7 +4203,10 @@ button.closebutton:active {
 #footer .social-media ul li:last-child {
     margin-right: 0;
 }
-.footer-container-popover .btn-footer-popover {
+button.btn-footer-popover,
+button.btn-footer-popover:hover,
+button.btn-footer-popover:focus,
+button.btn-footer-popover:active {
     color: var(--white);
     background: var(--color_allports_approx) !important;
 }
