@@ -101,6 +101,7 @@ $string['pluginname'] = 'Klass';
 $string['readmore'] = 'اقرأ أكثر';
 $string['region-side-post'] = 'حق';
 $string['region-side-pre'] = 'اليسار';
+$string['knowmore'] = 'تعرف أكثر';
 $string['sb1_default_cnt'] = '<p>أبجد هوز هو مجرد دمية النص من <br class="visible-lg">صناعة الطباعة والتنضيد.</p>';
 $string['sb1_default_title'] = 'تعلم دورات على الانترنت';
 $string['sb2_default_cnt'] = '<p>أبجد هوز هو مجرد دمية النص من <br class="visible-lg">صناعة الطباعة والتنضيد.</p>';

@@ -4030,7 +4030,7 @@ button.closebutton:active {
 .dir-rtl .carousel-overlay-content .content-wrap .read-more:before {
     content: '\f104';
     font-family: 'fontawesome';
-    margin-right: 10px;
+    margin-left: 10px;
 }
 .dir-rtl .carousel-overlay-content .content-wrap .read-more:after {
     display: none;

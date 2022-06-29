@@ -35,11 +35,14 @@
         <!-- <img src="<?php echo $slideimg; ?>" alt="slide"> -->
           <div class=" carousel-overlay-content container-fluid">
               <div class="content-wrap">
-              {{#slidecaption}}
-              <h2>{{{slidecaption}}}</h2><br>
-              {{/slidecaption}}
-
-              {{{slidedesc}}}
+                {{#slidecaption}}
+                  <h2>{{{slidecaption}}}</h2><br>
+                {{/slidecaption}}
+                {{#slidebuttontxt}}
+                <div class="carousel-btn">
+                  <a href="{{slidebuttonurl}}" class="read-more">{{slidebuttontxt}}</a>
+                </div>
+              {{/slidebuttontxt}}
             </div>
 
           </div>

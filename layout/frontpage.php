@@ -64,7 +64,9 @@ $visableslide = 0;
 for ($s1 = 1; $s1 <= $data['numberofslides']; $s1++) :
     $slide['s'] = $s1;
     $slide['slidecaption'] = theme_klass_get_setting('slide' . $s1 . 'caption', true);
-    $slide['slidedesc'] = theme_klass_get_setting('slide' . $s1 . 'desc', 'format_html');
+    $slidebuttontxt = theme_klass_get_setting('slide'. $s1. 'urltext');
+    $slide['slidebuttontxt'] = theme_klass_lang($slidebuttontxt);
+    $slide['slidebuttonurl'] = theme_klass_get_setting('slide'. $s1. 'url');
     $slide['slideimg'] = theme_klass_render_slideimg($s1, 'slide' . $s1 . 'image');
     if ($slide['slideimg']) {
         $visableslide += 1;
