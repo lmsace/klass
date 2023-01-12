@@ -50,5 +50,29 @@ function xmldb_theme_klass_install() {
         $filerecord->itemid = 0;
         $filerecord->filename = 'slide1image.jpg';
         $fs->create_file_from_pathname($filerecord, $CFG->dirroot . '/theme/klass/pix/home/slide1.jpg');
+
+    // Logo image.
+        $fs = get_file_storage();
+        $filerecord = new stdClass();
+        $filerecord->component = 'theme_klass';
+        $filerecord->contextid = context_system::instance()->id;
+        $filerecord->userid = get_admin()->id;
+        $filerecord->filearea = 'logo';
+        $filerecord->filepath = '/';
+        $filerecord->itemid = 0;
+        $filerecord->filename = 'logo.png';
+        $fs->create_file_from_pathname($filerecord, $CFG->dirroot . '/theme/klass/pix/home/logo.png');
+
+    // Footer logo image.
+        $fs = get_file_storage();
+        $filerecord = new stdClass();
+        $filerecord->component = 'theme_klass';
+        $filerecord->contextid = context_system::instance()->id;
+        $filerecord->userid = get_admin()->id;
+        $filerecord->filearea = 'footerlogo';
+        $filerecord->filepath = '/';
+        $filerecord->itemid = 0;
+        $filerecord->filename = 'footerlogo.png';
+        $fs->create_file_from_pathname($filerecord, $CFG->dirroot . '/theme/klass/pix/home/footerlogo.png');
 }
 
