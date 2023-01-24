@@ -624,7 +624,6 @@ label {
 #region-main .card .singlebutton {
     margin-bottom: 10px;
 }
-
 select {
     color: var(--color_mine_shaft_approx);
     border: 1px solid var(--color_celeste_approx);
@@ -1257,8 +1256,7 @@ button.close:focus,
     background: var(--color_allports_approx);
 }
 .pagelayout-standard #page.drawers .main-inner,
-body.limitedwidth #page.drawers .main-inner,
-#page.drawers {
+body.limitedwidth #page.drawers .main-inner {
     padding: 0;
     margin-top: 0;
 }
@@ -1267,6 +1265,9 @@ body.limitedwidth #page.drawers .main-inner,
 }
 .paging:empty {
     padding: 0;
+}
+.maincalendar .calendarmonth td.today .day-number-circle {
+    background-color: var(--color_primary);
 }
 #page-header #page-navbar .breadcrumb-button input[type="text"] {
     width: auto;
@@ -1949,6 +1950,7 @@ button.closebutton:active {
 @media (min-width: 576px) {
     #page-wrapper #page {
         height: 100%;
+        padding: 0;
     }
     .userprofile .userprofilebox .profilepicture {
         float: left;
@@ -2541,6 +2543,7 @@ button.closebutton:active {
     white-space: normal;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    border-radius: 5px;
 }
 .header-main .navbar .navbar-inner .nav-item .dropdown-menu a:last-child {
     border-bottom: 0;
@@ -3503,6 +3506,273 @@ button.closebutton:active {
 .dir-rtl .breadcrumb > li > .divider:before {
     content: "\f100";
 }
+.block-region .block .card-body {
+    padding: 0;
+}
+.block-region .block .card-body .card-title {
+    width: 100%;
+    padding: 20px;
+    background: var(--color_black_haze_approx);
+    border-bottom: 1px solid var(--color_alto_approx);
+    display: block !important;
+    margin-right: 0 !important;
+}
+.block-region .block .card-body .card-text {
+    padding: 20px;
+    padding-top: 0;
+}
+.block-region .block .card-body .card-text .block_tree_box {
+    padding-top: 0 !important;
+}
+.block-region .block .card-body .card-text .generalbox {
+    padding: 0 !important;
+}
+.block-region .block .card-body .card-text .comment-area .fd a {
+    color: var(--white);
+}
+.block-region .block .card-body .card-text .unlist a i {
+    margin: 0 5px;
+    display: inline;
+}
+.block-region .block .card-body.course-info-container {
+    padding: 1.25rem;
+    border: 0;
+}
+.path-calendar .maincalendar .calendartable td {
+    vertical-align: middle;
+}
+.block-myoverview .tab-content.content-centred .tab-pane .btn-group a.btn {
+    color: var(--white);
+}
+.block .calendar_filters li span.calendar_event_site i {
+    margin: 0 5px;
+}
+.block .calendar_filters ul li a span {
+    padding: 0 2px;
+    margin-right: 5px;
+    margin-left: 0;
+    display: inline-block;
+}
+.block .calendar_filters ul li a span i {
+    margin: 0;
+}
+.block .calendar_filters ul li a span span.eventname {
+    margin: 0;
+}
+.block_myoverview .content-centred .nav.nav-pills .nav-item .nav-link.active {
+    background: var(--color_cerulean_approx);
+}
+.block_myoverview .content-centred .nav.nav-pills .nav-item .nav-link.active:hover {
+    color: var(--white);
+}
+.block_myoverview .paged-content-page-container {
+    margin-top: 10px;
+}
+.block-myoverview .dropdown-menu .dropdown-item.active {
+    color: var(--white);
+    background: var(--color_allports_approx);
+}
+.block-myoverview .dropdown-menu .dropdown-item:hover {
+    color: var(--white);
+    background: var(--color_allports_approx);
+}
+.block-myoverview .dropdown-menu .dropdown-item:focus {
+    color: var(--white);
+    background: var(--color_allports_approx);
+}
+.block-region .block .card-body .block-myoverview .card-title {
+    padding: 0;
+    background: none;
+    border: 0;
+    margin-right: 0 !important;
+}
+.block-region .block .card-body .block-myoverview .card-title a {
+    font-size: 16px;
+    color: var(--color_allports_approx);
+}
+.block-timeline .dropdown-menu .dropdown-item:hover,
+.block-timeline .dropdown-menu .dropdown-item.active,
+.block-timeline .dropdown-menu .dropdown-item:focus,
+.block-timeline .dropdown-menu .dropdown-item:active {
+    color: var(--white);
+    background: var(--color_allports_approx);
+}
+.block-region .block.card .card-body {
+    padding: 0 !important;
+}
+.block-recentlyaccessedcourses .card .card-body.course-info-container {
+    padding: 1.25rem !important;
+}
+.block_recentlyaccessedcourses .paging-bar-container {
+    margin-top: 0;
+}
+.block_recentlyaccessedcourses .paging-bar-container .pagination .page-item .page-link {
+    color: var(--color_cerulean_approx);
+}
+.block .calendarwrapper .calendar-controls .arrow_text {
+    display: none;
+}
+#page-my-index #region-main #block-region-content .block-myoverview .dropdown-menu .dropdown-item:hover .icon {
+    color: var(--white);
+}
+#page-my-index #region-main #block-region-content .block-myoverview .dropdown-menu .dropdown-item:focus .icon {
+    color: var(--white);
+}
+#page-my-index #region-main #block-region-content .block-myoverview .dropdown-menu .dropdown-item:active {
+    background-color: var(--color_allports_approx);
+    color: var(--white);
+}
+#page-my-index #region-main #block-region-content .block-myoverview .dropdown-menu .dropdown-item:active .icon {
+    color: var(--white);
+}
+#region-main.has-blocks .block-myoverview .dashboard-card-deck .dashboard-card .card-body {
+    border: 0;
+    padding: 10px !important;
+}
+#region-main.has-blocks .block-myoverview .dashboard-card-deck .dashboard-card .card-body .card-title a.coursename {
+    color: initial;
+}
+#region-main.has-blocks .block-myoverview .progress {
+    border-radius: 5px;
+}
+#region-main.has-blocks .block-myoverview .progress .progress-bar {
+    background-color: var(--color_cerulean_approx);
+}
+.dir-rtl .block .calendar_filters li span + i {
+    margin-right: 5px;
+    margin-left: 0;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .block_calendar_month .content {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .block .minicalendar td {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .block.card {
+        border: 1px solid var(--color_alto_approx);
+    }
+}
+
+/*Blocks RTL*/
+.dir-rtl .block .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.dir-rtl .block .list li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.dir-rtl .block .calendar-controls .previous {
+    text-align: left;
+}
+.dir-rtl .block .calendar-controls .previous:before {
+    content: "\f101";
+}
+.dir-rtl .block .calendar-controls .next {
+    text-align: right;
+}
+.dir-rtl .block .calendar-controls .next:after {
+    content: "\f100";
+}
+.dir-rtl .block_navigation .block_tree .depth_1 > ul {
+    margin-right: 0;
+}
+.dir-rtl .block_navigation .block_tree .depth_1 > .tree_item.branch {
+    padding-right: 0;
+}
+.dir-rtl .block_navigation .block_tree .tree_item.branch {
+    background-position: right center;
+}
+.dir-rtl .block_settings .block_tree .tree_item.branch {
+    background-position: right center;
+}
+.dir-rtl .comment-message .picture {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+/*Breadcrumb*/
+.breadcrumb > li {
+    font-size: 16px;
+}
+.breadcrumb > li a {
+    color: var(--color_thunderbird_approx);
+}
+.breadcrumb > li > .divider:before a {
+    content: "\f101";
+}
+.breadcrumb-nav {
+    background: none;
+    border-radius: 0;
+    margin: 0;
+}
+.breadcrumb {
+    background: none;
+    border-radius: 0;
+    display: block;
+}
+.breadcrumb > li {
+    font-size: 12px;
+    text-shadow: none;
+    display: inline-block;
+}
+.breadcrumb > li > a {
+    color: var(--color_log_cabin_approx);
+}
+.breadcrumb > li > a:hover,
+.breadcrumb > li > a:focus {
+    color: var(--color_thunderbird_approx);
+}
+.breadcrumb > li > span {
+    color: var(--color_log_cabin_approx);
+}
+.breadcrumb > li > .divider {
+    display: inline-block;
+}
+.breadcrumb > li > .divider:before {
+    font-family: FontAwesome;
+    color: var(--color_log_cabin_approx);
+}
+.breadcrumb > li > .divider > .arrow {
+    display: inline-block;
+    text-indent: -999em;
+}
+.breadcrumb-button {
+    margin-top: 5px;
+    margin-bottom: 4px;
+}
+.breadcrumb-button .singlebutton div {
+    margin-bottom: 0;
+}
+.breadcrumb-button .singlebutton input[type="submit"] {
+    margin-bottom: 0;
+}
+#page-header #page-navbar .breadcrumb-button input[type="text"] {
+    height: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+/*Breadcrumb RTL*/
+.dir-rtl .breadcrumb > li {
+    font-size: 16px;
+}
+.dir-rtl .breadcrumb > li a {
+    color: var(--color_thunderbird_approx);
+}
+.dir-rtl .breadcrumb > li > .divider:before {
+    content: "\f100";
+}
 .dir-rtl input.form-submit {
     margin: 0 5px 10px 0;
 }
@@ -4092,6 +4362,9 @@ button.closebutton:active {
     background: var(--white);
     border-top: 5px solid var(--color_cerulean_approx);
 }
+#footer .footer-main {
+    margin: 10px 0;
+}
 #footer .infoarea {
     margin-bottom: 20px;
 }
@@ -4477,7 +4750,7 @@ button.btn-footer-popover:active {
 }
 .drawers .secondary-navigation .moremenu {
     border: 0;
-    margin-top: 20px;
+    margin: 0;
 }
 .moremenu .nav-link[data-toggle="tab"]:after {
     display: none;
