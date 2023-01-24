@@ -7,13 +7,13 @@
                 {{#block1}}
                     <div class="{{colclass}}">
                         <div class="infoarea">
+                            {{# logourl_footer}}
                             <div class="footer-logo">
                                 <a href="{{config.wwwroot}}/?redirect=0">
-                                {{# logourl_footer}}
                                     <img src="{{logourl_footer}}" alt="klass">
-                                {{/ logourl_footer}}
                                 </a>
                             </div>
+                            {{/ logourl_footer}}
                             {{{footnote}}}
                         </div>
                     </div>
@@ -34,10 +34,10 @@
                             <h5 class="nopadding">{{s_contact_us}}</h5>
                             <p>{{# address}}{{address}}{{/address}}</p>
                             {{# phoneno}}
-                            <p><i class="fa fa-phone-square"></i>{{s_phone}} : {{phoneno}}</p>
+                            <p><i class="fa fa-phone-square"></i>{{s_phone}} {{phoneno}}</p>
                             {{/ phoneno}}
                             {{# emailid}}
-                            <p><i class="fa fa-envelope"></i>{{s_email}} : <a class="mail-link" href="mailto:{{emailid}}"> {{emailid}}</a></p>
+                            <p><i class="fa fa-envelope"></i>{{s_email}} <a class="mail-link" href="mailto:{{emailid}}"> {{emailid}}</a></p>
                             {{/ emailid}}
                         </div>
                     </div>

@@ -153,7 +153,6 @@ a:not([class]):focus,
     outline: none;
 }
 i.icon {
-    margin-right: 0;
     font-size: 16px;
 }
 i.icon :before {
@@ -161,6 +160,9 @@ i.icon :before {
 }
 .btn-link:hover {
     color: var(--white);
+}
+a.btn.btn-link:hover {
+    color: var(--color_primary);
 }
 a {
     color: var(--color_cerulean_approx);
@@ -1665,26 +1667,26 @@ button.closebutton:active {
     .dir-rtl .mform .fdescription.required {
         margin-left: 0;
     }
-    .dir-rtl .form-buttons {
+    /* .dir-rtl .form-buttons {
         padding-right: 165px;
         padding-left: 0;
-    }
+    } */
     .dir-rtl .userprofile dl.list dd {
         margin-left: 0;
     }
     .dir-rtl .form-horizontal .controls {
         margin-left: 0;
     }
-    .dir-rtl .path-admin .buttons {
+    /* .dir-rtl .path-admin .buttons {
         padding-right: 165px;
         padding-left: 0;
-    }
+    } 
     .form-buttons {
         padding-left: 265px;
-    }
-    .path-admin .buttons {
+    }*/
+   /*  .path-admin .buttons {
         padding-left: 265px;
-    }
+    } */
 }
 
 @media (max-width: 1199px) {
@@ -1715,7 +1717,7 @@ button.closebutton:active {
     }
 }
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
     .form-buttons {
         padding-left: 220px;
     }
@@ -1730,7 +1732,7 @@ button.closebutton:active {
         padding-right: 220px;
         padding-left: 0;
     }
-}
+} */
 
 @media (max-width: 991px) {
     #page-admin-setting-themesettingklass #region-main {
@@ -1801,7 +1803,7 @@ button.closebutton:active {
 }
 
 @media (min-width: 768px) {
-    select {
+    select:not(.form-control) {
         max-width: 224px;
     }
     input[type="text"],
@@ -1844,7 +1846,7 @@ button.closebutton:active {
     .mform .form-inline .custom-select {
         max-width: 300px;
     }
-    select {
+    select:not(.form-control) {
         width: 100%;
         max-width: 224px;
     }
@@ -1945,6 +1947,9 @@ button.closebutton:active {
 }
 
 @media (min-width: 576px) {
+    #page-wrapper #page {
+        height: 100%;
+    }
     .userprofile .userprofilebox .profilepicture {
         float: left;
     }
@@ -2769,6 +2774,7 @@ button.closebutton:active {
 @media (max-width: 991px) {
     .header-main .navbar .navbar-inner button.navbar-toggler {
         margin-top: 20px;
+        margin-bottom: 20px;
     }
 }
 
@@ -4462,11 +4468,16 @@ button.btn-footer-popover:active {
     padding: 10px;
     background: var(--color_allports_approx);
 }
+.drawer-toggles .drawer-toggler {
+    top: 150px;
+    z-index: 3;
+}
 .drawer-toggles .drawer-toggler .btn:focus {
     box-shadow: none;
 }
 .drawers .secondary-navigation .moremenu {
     border: 0;
+    margin-top: 20px;
 }
 .moremenu .nav-link[data-toggle="tab"]:after {
     display: none;
@@ -4534,12 +4545,12 @@ button.btn-footer-popover:active {
     }
 }
 
-@media (min-width: 991px) {
+/* @media (min-width: 991px) {
     #page.drawers {
         height: auto;
     }
 }
-
+ */
 @media (min-width: 768px) {
     .pagelayout-standard #page.drawers .main-inner,
     body.limitedwidth #page.drawers .main-inner {
@@ -4579,12 +4590,11 @@ button.btn-footer-popover:active {
 }
 
 @media (min-width: 768px) {
-    .moremenu {
-        height: auto;
-    }
     .secondary-navigation .navigation .nav-tabs > li.nav-item {
         display: inline-block;
-        margin: 0 30px;
+    }
+    .secondary-navigation .navigation .nav-tabs > li.nav-item .nav-link {
+        padding: 0 30px;
     }
     .moremenu .nav.nav-tabs > .nav-item .nav-link.active {
         color: var(--color_allports_approx);
@@ -4595,7 +4605,6 @@ button.btn-footer-popover:active {
         font-family: var(--font_2);
         font-size: 18px;
         font-weight: normal;
-        margin-right: 10px;
     }
     .moremenu .nav.nav-tabs > .nav-item .nav-link[href="#linkroot"]:before {
         content: '\f013';
@@ -4633,5 +4642,8 @@ button.btn-footer-popover:active {
     .moremenu .nav.nav-tabs > .nav-item .nav-link.active {
         color: var(--white);
     }
-
+    .secondary-navigation .navigation .nav-tabs > li.nav-item .dropdown-menu {
+        left: auto !important;
+        right: 0;
+    }
 }
