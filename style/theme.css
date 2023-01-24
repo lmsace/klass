@@ -1920,6 +1920,9 @@ button.closebutton:active {
 }
 
 @media (min-width: 576px) {
+    .pagelayout-frontpage #page-wrapper #page {
+        height: auto;
+    }
     #page-wrapper #page {
         height: 100%;
         padding: 0;
@@ -4441,6 +4444,9 @@ button.btn-footer-popover:active {
 
 
 /*Drawers*/
+.drawer.drawer-right {
+    z-index: 1;
+}
 .drawer-toggles .drawer-left-toggle .btn,
 .drawer-toggles .drawer-right-toggle .btn {
     padding: 10px;
